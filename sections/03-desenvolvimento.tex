@@ -373,7 +373,7 @@ Próximo item na lista de tabulação, mesmo não sendo um elemento que receberi
     <li> <a href="pesquisa.html">Pesquisa</a></li>
 </ul>
 \end{lstlisting}}
-    \item Não abrir novas instâncias sem a solicitação do usuário. Não use o redirecionamento automático de páginas. Forçar a abertura de links em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso implemente essa funcionalidade, o link deve possuir uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no CSS. Lembre-se que em CSS, o conteúdo em pseudo-elementos é lido em voz alta por leitores de tela. Certifique-se de que contém informações relevantes.
+    \item Não abrir novas instâncias sem a solicitação do usuário. Não use o redirecionamento automático de páginas. Forçar a abertura de links em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso implemente essa funcionalidade, o link deve possuir uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no CSS. No CSS o conteúdo de pseudo-elementos é lido em voz alta por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
     \item Garanta que o conteúdo possua o foco por mouse ou teclado. Esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. A pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML que receber o foco do teclado, como links e elementos de formulário.
 {\begin{lstlisting}[language=html,caption=usando o foco visível]
 a:focus, a:hover {
@@ -391,11 +391,115 @@ a:focus, a:hover {
 
 {\textbf{Construção de gráficos com D3.js:}
 
+No \textit{e-commerce} foi decidido não construir o gráfico inteiramente do zero com D3.js, pois a abordagem normal do D3.js não facilita muito o reaproveitamento para formar componentes de gráficos, além do que quando um gráfico é plotado somente com D3.js pode haver problemas de performance, visto que o React não estava preparado para esse tipo de renderização continua ao se aplicar filtros e interações nos gráficos. Dessa forma, foi usado tags HTML normais e quando era necessário feito a criação do elementos e interações usando o D3.js.
+
 Para manipularmos o DOM (Document Object Model), precisamos aprender a utilizar os recursos presente no D3. O D3 usa JavaScript para realizar a maioria das tarefas de seleção, transição e vinculação de dados.
 
-{\textcolor{blue}{OPTAMOS POR NAO CONSTRUIR O GRAFICO TODO COM D3 E SIM APENAS AS PARTES QUE ERAM NECESSÁRIAS PARA EVITAR ENGASGOS DE PERFORMANCE. Entao era feito o esqueleto em html e adicionado as tags necessarias via d3.}}
+A primeira coisa necessária para construir um gráfico com D3.js é adicionar a biblioteca ao projeto, seja por gerenciador de pacotes ou por importação direta na tag \lstinline{script}. Feito isso, é preciso ter uma tag como base onde as partes do gráfico serão injetadas, geralmente é usada a tag \lstinline{svg} pois ela auxilia na construção de formas geométricas que será utilizado no gráfico. Após adicionar a tag svg precisamos adicionar uma nova tag \lstinline{g} para que o gráfico comece a tomar forma, essa tag \lstinline{g} é um recipiente utilizado para agrupar objetos.
 
-A primeira coisa necessária para construir um gráfico com D3.js é adicionar a biblioteca ao projeto, seja por gerenciador de pacotes ou por importação direta na tag \lstinline{script}. Feito isso, é preciso ter uma tag como base onde as partes do gráfico serão injetadas, geralmente é usada a tag \lstinline{svg} pois ela auxilia na construção de formas geométricas que será utilizado no gráfico.
+Para começar a desenhar qualquer tipo de gráfico é necessário colocar os eixos das abscissas e ordenadas, para isso que definir quais são os domínios e só assim construir as escalas, para que seja comportado todos os dados dentro dos limites criados pela escala. O próprio D3 já fornece alguns tipos de funções que nos auxiliam na criação dessas escalas, as funções são: \lstinline{d3.scaleBand()}, onde esta função divide o intervalo em n bandas onde n é o número de valores na matriz de domínio e \lstinline{d3.scaleLinear}, que é usada para criar um ponto de escala visual. Será criado duas escalas, uma para o eixo X usando a \lstinline{d3.scaleBand()} e outra para o eixo Y usando a \lstinline{d3.scaleLinear}.
+
+O próximo passo é criar por fim o conteúdo do gráfico de forma visual. Com o apoio de dados vindos de uma API podemos atribuir ao longo do eixo X e do eixo Y os valores e formas visuais necessárias. Utilizando a função \lstinline{attr} será possível definir os atributos do elemento, uma vez que essa função recebe dois parâmetros o nome do atributo e o valor desse atributo. Graças a essa função podemos definir altura, largura e os valores de cada ponto dos eixos.
+
+Depois que todos os valores dos gráficos estiverem corretamente plotados podemos lidar com as interações que estarão no gráfico. Todas as interações presentes via mouse devem também estarem disponíveis via teclado, ou seja, se houver um interação de clique de mouse deve haver uma interação de pressão de tecla. Para auxiliar na construção dessas interações pode-se usar a função \lstinline{.on()} que ficará responsável por agir como um \textit{event listener} de um elemento, onde qualquer tipo de interação será percebida. Essa função recebe dois argumentos, sendo o primeiro o tipo de evento e o segundo uma função que será disparava quando essa evento for ouvido. 
+
+
+\textbf{Tornando os gráficos acessíveis a leitores de tela}
+
+{Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso temos algumas abordagens eficientes:
+\begin{itemize}
+    \item Adicionar o atributo \lstinline{alt}: Os leitores de tela falam texto alternativo sem permitir que os usuários acelerem ou pulem, portanto, as informações sejam descritivas, mas sucintas.
+    \item Forneça os dados de algum outro modo que não somente por gráficos: Incluir um link para um CSV ou outro formato de dados legível por máquina para que pessoas com deficiência visual possam navegar pelos dados do gráfico com um leitor de tela é essencial.
+    \item Adicionar um título claro em cada gráfico plotado: A primeira coisa que será lida em um gráfico é o seu título, isso facilitará a experiência dos usuário de leitor de tela, que ao perceber que aquele gráfico não é o que ele precisa ver no momento poderá pular a leitura ou modificar o filtro em questão.
+    \item Rotular os dados diretamente: Legendas podem ser não eficientes para usuários daltônicos ou deficientes visuais que podem ter dificuldade em combinar as cores do gráfico com as da legenda. Rotulando também diminuirá o trabalho de varredura para frente e para trás tentando combinar a legenda com os dados.
+    \item Verifique se o contraste de cores do gráfico está dentro dos padrões da WCAG.
+    \item Utilizar espaços em branco para separar gráficos que são empilhados. O uso criterioso do espaço em branco aumenta a legibilidade, ajudando a demarcar e distinguir as diferentes seções sem depender apenas da cor. Isso também pode complementar as opções de cores acessíveis, ajudando os usuários a distinguir a diferença entre as cores que identificam seções separadas.
+    \item Adicionar explicações ou conclusões em linguagem clara: Após aplicar determinados filtros forneça um tipo de conclusão do gráfico plotado. Esse recurso só deve tá disponível quando a navegação por tab for identificada. 
+\end{itemize}
+
+
+\textbf{Gráficos como componentes reutilizáveis}
+
+{Quando se trabalha com React ao se criar um componente devemos garantir que esse componente possa ser reutilizável, para que isso seja possível no momento da criação de cada componente deve-se ter em mente que quando menor e mais genérico for o componente mais ele será escalável e com isso facilitará a construção de componentes maiores.
+
+Para facilitar a construção como módulos separados cada tipo de gráfico se tornou um componente reutilizável. Em cada componente desses contaria com suas funções e particularidades porém com a flexibilidade de ser um componente genérico, onde todos os dados são populados através de propriedades que são repassadas do componente pai para o componente filho. 
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
+    new, return, this, typeof, var, void, while, with},
+  % Literals, primitive types, and reference types.
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+    Array, Boolean, Date, Math, Number, String, Object},
+  % Built-ins.
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/}, % JavaDoc style comments
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings]
+
+{\begin{lstlisting}[language=javascript,caption=exemplo de um componente de gráfico]
+const draw = (props) => {
+    d3.select('.vis-barchart > *').remove();
+    const data = props.data;
+    const margin = {top: 20, right: 20, bottom: 30, left: 40};
+    const width = props.width - margin.left - margin.right;
+    const height = props.height - margin.top - margin.bottom;
+    
+    // criando o svg
+    let svg = d3.select('.vis-barchart').append('svg')
+        .attr('width',width + margin.left + margin.right)
+        .attr('height',height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // formatando os dados
+    data.forEach(function(d) {
+        d.age = +d.age;
+    });
+
+    // Dimensionar o intervalo dos dados nos domínios
+    let x = d3.scaleBand()
+      .range([0, width])
+      .padding(0.1);
+    let y = d3.scaleLinear()
+      .range([height, 0]);
+    x.domain(data.map(function(d) { return d.name; }));
+    y.domain([0, d3.max(data, function(d) { return d.age; })]);
+
+    // Adicionando os retângulos para o gráfico de barras
+    svg.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.name); })
+        .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d.age); })
+        .attr("height", function(d) { return height - y(d.age); });
+
+    // Adicionando o eixo X
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // Adicionando o eixo Y
+    svg.append("g")
+        .call(d3.axisLeft(y));
+}
+
+export default draw;
+\end{lstlisting}}
+
+}
+
+}
+
+Para usar esse componente basta chamá-lo passando as \lstinline{props} que são necessárias para a plotagem do gráfico.
+\begin{lstlisting}[language=javascript, caption=Usando um componente reutilizável]
+<BarChart data={data} width={1000} height={550}/>
+\end{lstlisting}
 
 }
 \subsection{Fase 4: Testes e avaliações de acessibilidade}
@@ -406,7 +510,7 @@ padrões Web e as diretrizes de acessibilidade, é necessário efetuar testes pa
 \begin{itemize}
 \item \textit{Google Accessibility Developer Tools} ({Plugins} para navegador \textit{Chrome}).
 \item \textit{DevTools }({Plugins} para navegador \textit{Chrome}).
-\item Contrast Checker (website - Validação de contraste de cores
+\item Contrast Checker (website - Validação de contraste de cores)
 \end{itemize}
 \item Avaliações manuais: Essa etapa pode ser feita usando o leitor de tela e a navegação por teclado, onde deve ser checado se todos os comportamentos e ações esperados estão sendo realmente respeitados e executados. 
 \end{itemize}
