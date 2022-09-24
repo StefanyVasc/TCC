@@ -19,7 +19,7 @@
 \usepackage{pgfgantt}
 \usepackage{lipsum}
 \usepackage{xcolor}
-
+\usepackage{appendix}
 % set document font, font sizes, margin dimensions and spacing
 \usepackage{fontspec}
 \setmainfont{Arial}
@@ -47,6 +47,10 @@
  \usepackage{colortbl}%
    \newcommand{\myrowcolour}{\rowcolor[gray]{0.925}}
 \usepackage{booktabs}
+
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{colortbl}
 
 \ifblackandwhite
   \newcommand{\cheading}[2]{\textbf{#1\hfill #2}}
@@ -111,10 +115,16 @@
 \input{sections/04-dificuldades.tex}
 \input{sections/05-impactos.tex}
 \input{sections/06-conclusao.tex}
+
 \renewcommand\refname{Referências Bibliográficas}
 %\bibliographystyle{abntex2-alf}
 \bibliographystyle{IEEEtran}
 \bibliography{referencias.bib}
 %\listoftodos
+\addcontentsline{toc}{section}{\numberline{}Referências Bibliográficas}
+\renewcommand*{\chaptername}{\appendixname}
+
+% \addcontentsline{toc}{section}{\numberline{}Apêndice A}
+\input{sections/appendix}
 
 \end{document}
