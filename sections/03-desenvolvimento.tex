@@ -94,33 +94,89 @@ Tipografia: A tipografia não é apenas escolher uma fonte legal para o seu proj
 \newpage
 Elementos de UI: Este tópico compreende os elementos que estarão presentes na UI, logo serão apresentados exemplos e listagem desses componentes. Na construção desses elementos é feito o detalhamento visual, ou seja, os tamanhos, espaços, margens, cores que ele deve possuir como também os seus estados comportamentais, se houver um erro como ele se comporta, em caso de elemento focado como deve ficar o elemento.
 
-\begin{wrapfigure}{l}{0.5\textwidth}
-        \begin{center}
-    	\includegraphics[width=0.48\textwidth]{images/ui-exemplo.png}
-        
-        \end{center}
+
+Com o componente \textit{Card} da figura \ref{fig:UI_componentes} abaixo podemos analisar onde as diretrizes foram aplicadas e como elas impactam na construção de componentes mais complexos de UI. 
+
+\begin{figure}[ht]
+        \centering
+    	\includegraphics[width=0.38\textwidth]{images/ui-exemplo.png}
         \caption{Exemplo de um componente montado com elementos de UI}
-\end{wrapfigure} 
+        \label{fig:UI_componentes}
+\end{figure}
 
-Com o componente \textit{Card} do exemplo ao lado podemos analisar onde as diretrizes foram aplicadas e como elas impactam na construção de componentes mais complexos de UI. 
-\begin{itemize}
-\item O elemento sinalizado como 1 está recebendo foco (diretriz 3.2.1 e 2.4.7), a arquitetura desse elemento está fazendo sentido para todos, sejam ouvintes ou leitores (diretriz 1.3.1). A apresentação das informações segue uma sequencia lógica (diretriz 1.3.2).  
-\item O número 2 refere-se a imagem onde ela deve ter uma descrição alternativa em texto (diretriz 1.1.1) e possuir um contraste não textual (diretriz 1.4.11).
-\item O terceiro item compreende o cabeçalho do Card. No cabeçalho deverá conter um contraste textual mínimo (diretriz 1.4.3) e ser claro o suficiente para a finalidade do conteúdo (diretriz 2.4.6).
-\item O quarto item compreende a informações adicionais, sejam elas quantos itens restam disponíveis para compra ou a avaliação daquele item. Para essas informações adicionais além de estarem descritas de forma não "convencional" aos padrões usuais de \textit{e-commerce} foram aplicadas as diretrizes de contraste textual (diretriz 1.4.11), contraste melhorado (diretriz 1.4.6), etc.
-\end{itemize}
-\newpage
-\begin{itemize}
-\item O quinto item é a descrição do produto, essa descrição não está exposta em sua totalidade, para ler o texto completo é necessário apertar o botão para ler mais. Além de todas as diretrizes de contraste que foram aplicadas, está sendo usado as diretrizes de foco (diretrizes 2.4.7 e 3.2.1), o botão presente segue a diretriz de tamanho de área clicável (diretriz 2.5.5), além de ter o nome acessível (diretriz 2.5.3). No botão em questão ainda há o acionamento e foco por teclado (diretrizes 1.4.12, 1.4.13, 2.1.1, 2.1.2 e 2.1.3). 
-\item O botão sinalizado pelo número 6 segue as mesmas diretrizes do botão listado no item 5. Além das diretrizes relacionadas a foco (diretriz 2.4.3, 2.4.7), navegação (diretriz 3.2.3, 1.4.12, 1.4.13, 2.1.1, 2.1.2 e 2.1.3), localização (diretriz 2.4.8, 3.2.4) e acionamento (diretriz 2.5.2).
-\item O item 7 refere-se a informações sobre preços, onde há um contraste muito nítido para evidenciar a informação mais importante, que no caso é o valor. Nesse item contempla todas as diretrizes de contraste. 
-\item O item 8 é uma abordagem diferenciada para informações que são úteis em contextos gerais. Nesse caso é muito atrativo para usuários ouvintes saberem sempre quanto pontos eles dispõem em sua conta, então essa informação está disposta mais facilmente. 
-\end{itemize}
+Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de 1 a 8 pontuados na Figura \ref{fig:UI_componentes} com as diretrizes aplicadas em cada ponto juntamente com sua breve descrição. Foi pontuado também o nível em que cada diretriz se encontra. Para maiores detalhes sobre as diretrizes consultar o apêndice \ref{sec:apendice}
+{
 
+
+\noindent\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{Elementos de UI}\resizebox{\linewidth}{!}{%
+\begin{tabular}{|c|l|l|c|p{400px}|} 
+\hline
+\rowcolor[HTML]{ECF4FF} 
+{\color[HTML]{333333} Identificador & Diretriz} & Nome & Nível & Descrição \\ 
+\hline
+    1 & 3.2.1  &
+       Em foco & A & O foco sempre deve se manter durante a navegação, guiando o usuário e evitando mudanças que causem desorientação. \\ 
+       \cline{2-5} & 2.4.7 & Foco visível & A & Ao se interagir por teclado, qualquer pessoa deve conseguir identificar qual é a sua localização na tela através de um foco visível. \\ 
+        \cline{2-5} & 1.3.1 & Informações e Relações & A & As estruturas da tela devem ser construída de forma que sua arquitetura de informação faça sentido tanto para todos, sejam ouvintes ou leitores. \\ 
+        \cline{2-5} & 1.3.2 & Sequência com significado & A & A apresentação das informações na tela sempre deverá ter uma sequência lógica. \\ 
+       \hline
+    2 & 1.1.1 & 
+        Conteúdo Não Textual & A & Todo o conteúdo não textual que é exibido ao usuário tem uma alternativa textual que serve a um propósito equivalente.\\
+        \cline{2-5} & 1.4.11 & Contraste Não textual & AA & apresentação visual a seguir tem um relação de contraste de pelo menos 3:1 contra cor(es) adjacente(s).\\
+        \hline
+    3 & 1.4.3 & 
+        Contraste (mínimo) & AA & Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1.\\
+        \cline{2-5} & 2.4.6 & Cabeçalhos e rótulos  & AA & Todos os títulos e rótulo devem descrever claramente a finalidade dos conteúdos, não deve haver ambiguidade em seu entendimento.\\
+    \hline
+    4 & 1.4.6 & 
+        Contraste (melhorado) & AAA & Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 7:1.\\
+        \cline{2-5} & 1.4.11 & Contraste Não textual & AA & A apresentação visual a seguir tem um relação de contraste de pelo menos 3:1 contra cor(es) adjacente(s).\\
+    \hline 
+     5 & 2.4.7 & 
+        Foco visível  & A & Ao se interagir por teclado, qualquer pessoa deve conseguir identificar qual é a sua localização espacial na tela através de um foco visíve\\
+        \cline{2-5} & 3.2.1 & Em foco & A & O foco sempre deve se manter durante a navegação, guiando o usuário e evitando mudanças que causem desorientação.\\
+        \cline{2-5} & 2.5.5 & Tamanho da área clicável & AAA & O tamanho das áreas acionáveis por clique ou toque devem possuir no mínimo 44x44 pixeis de espaçamento\\
+        \cline{2-5} & 2.5.3 & Rótulo no Nome acessível & A & Rótulos em botões, ícones acionáveis ou qualquer controle interativo, devem ter uma descrição significativa.\\
+        \cline{2-5} & 1.4.12 & Espaçamento de texto & AA & Sempre que houver um redimensionamento os textos não devem perder legibilidade\\
+        \cline{2-5} & 1.4.13 & Conteúdo em foco por mouse ou teclado & AA & Conteúdos adicionais não devem ser acionados apenas com foco por mouse ou teclado.\\
+        \cline{2-5} & 2.1.1 & Teclado & A & Todas as funcionalidades devem ser acionadas via teclado. \\
+        \cline{2-5} & 2.1.2 & Sem bloqueio de teclado & A & Ao se interagir via teclado, a navegação por todos os elementos ”clicáveis”deve ocorrer sem que haja bloqueios ou interrupções.\\
+        \cline{2-5} & 2.1.3 & Teclado (sem exceção) & AAA & Todas as funcionalidades devem ser acionadas via teclado, sem exceção.\\
+    \hline 
+    6 & 2.4.3 & 
+        Ordem do foco & A & A interação por elementos focáveis na tela sempre deverá ser sequencial e lógica de acordo com o conteúdo apresentado.\\
+        \cline{2-5} & 2.4.7 & Foco visível & A & Ao se interagir por teclado, qualquer pessoa deve conseguir identificar qual é a sua localização na tela através de um foco visível. \\
+        \cline{2-5} & 3.2.3 & Navegação consistente & AA & Deve-se manter a consistência com relação ao formato de apresentação, interação e localização na tela. \\
+        \cline{2-5} & 1.4.12 & Espaçamento de texto & AA & Sempre que houver um redimensionamento os textos não devem perder legibilidade\\
+        \cline{2-5} & 1.4.13 & Conteúdo em foco por mouse ou teclado & AA & Conteúdos adicionais não devem ser acionados apenas com foco por mouse ou teclado.\\
+        \cline{2-5} & 2.1.1 & Teclado & A & Todas as funcionalidades devem ser acionadas via teclado. \\
+        \cline{2-5} & 2.1.2 & Sem bloqueio de teclado & A & Ao se interagir via teclado, a navegação por todos os elementos ”clicáveis”deve ocorrer sem que haja bloqueios ou interrupções.\\
+        \cline{2-5} & 2.1.3 & Teclado (sem exceção) & AAA & Todas as funcionalidades devem ser acionadas via teclado, sem exceção.\\
+        \cline{2-5} & 2.4.8 & Localização & AAA & Qualquer pessoa deve conseguir se localizar ou se orientar facilmente em qualquer nas telas.\\
+        \cline{2-5} & 3.2.4 & Identificação consistente & AA & Deve-se manter a consistência com relação a diferentes formatos de elementos, mas que possuem uma mesma funcionalidade.\\
+        \cline{2-5} & 2.5.2 & Cancelamento de acionamento & A & Deve se fornecer um modo de cancelar acionamentos feitos de forma não proposital.\\
+    \hline
+    7 & 1.4.3 & 
+        Contraste (mínimo) & AA & Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1.\\
+        \cline{2-5} & 1.4.6 & Contraste (melhorado) & AAA & Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 7:1.\\
+    \hline
+    8 & 4.1.3 & 
+        Mensagens de status & AA & Qualquer tipo de mensagem que é resultado de uma ação deve ser transmitida sem que ocorra uma mudança de foco na tela.\\
+    \hline
+
+\end{tabular}%
 }
+\label{elementos de UI}
 
-\subsection{Fase 2: Adaptação e construção da UI acessível e usável usando o guia de acessibilidade e \textit{style guide}}
-{A segunda fase se concentrou na adaptação da UI e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias. Nessa fase o foco principal se dividiu em duas vertentes:
+\end{minipage}
+
+}}
+
+
+\subsection{Fase 2: Adaptação e construção da \textit{UI} acessível e usável usando o guia de acessibilidade e \textit{style guide}}
+{A segunda fase se concentrou na adaptação da \textit{UI} e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias. Nessa fase o foco principal se dividiu em duas vertentes:
 \begin{itemize}
 \item Criar abordagens inteligentes para problemas de acessibilidade em imagens, formulários e navegação e a adaptação de componentes com \textit{HTML} \cite{HTML} não semântico para semântico.
 \item  Adaptar e criar componentes para que as tecnologias assistivas pudessem entendê-los corretamente e assim ter uma a navegação por teclado eficaz.
@@ -133,7 +189,7 @@ Com o componente \textit{Card} do exemplo ao lado podemos analisar onde as diret
 
 \newpage
 
-{\textbf{Caso de uso 1:} Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo role do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos que um botão teria.
+{\textbf{Caso de uso 1:} Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo role do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
 
 \begin{lstlisting}[language=html, caption=Componente de botão antes de receber boas praticas e acessibilidade]
     <div
@@ -252,14 +308,14 @@ div {
 \end{itemize}
 }
 \subsubsection{Adaptação de componentes para o uso de leitores de telas e navegação por teclado}
-{Antes de falar de adaptação de componentes é necessário entender como funciona o leitor de telas. O leitor de telas basicamente é um software que vai percorrendo textos e imagens e lendo em voz alta tudo o que ele encontra na tela, a partir do momento que o usuário começa a interagir com o software para efetuar uma navegação ele vai percorrendo o documento saltando entre elementos interativos e cabeçalhos.Para que essa navegação ocorra deve está tudo funcionando direito, pois caso contrário o usuário pode se perder na página e ter dificuldades em entender como a informação está organizada. No leitor de telas a navegação ocorre de três maneiras: 
+{Antes de falar de adaptação de componentes é necessário entender como funciona o leitor de telas. O leitor de telas basicamente é um software que vai percorrendo textos e imagens e lendo em voz alta tudo o que ele encontra na tela, a partir do momento que o usuário começa a interagir com o software para efetuar uma navegação ele vai percorrendo o documento saltando entre elementos interativos e cabeçalhos. Para que essa navegação ocorra tudo deve está funcionando direito, pois caso contrário o usuário pode se perder na página e ter dificuldades em entender como a informação está organizada. No leitor de telas a navegação ocorre de três maneiras: 
 \begin{itemize}
     \item Navegação com as setas direcionais: Usando a navegação por setas direcionais o usuário consegue acessar as informações textuais.
     \item Navegação por tecla \textit{tab}: O leitor sai pulando para os links espalhados na página.
     \item Navegação com a tecla h: O leitor salta entre os cabeçalhos marcados na página.
 \end{itemize}
 
-\newpage
+
 
 {\textbf{Caso de uso 1:} Navegação por cabeçalhos.
 
@@ -290,7 +346,7 @@ Navegar por entre os links é uma forma de observar o texto rapidamente, especia
     claramente para onde levam. 
     \begin{itemize}
         \item Com atributo \lstinline{tabindex} é possível definir uma ordem de foco nos elementos dispostos na tela. Usando o \lstinline{tabindex=0} é inserido um elemento na ordem natural de tabulação e com \lstinline{tabindex="-1"} um elemento é removido da ordem e tabulação.
-        \newpage
+
 {\begin{lstlisting}[language=html,caption=Uso do atributo tabindex]
 <label>
     Primeiro na lista de tabulação:<input type="text">
@@ -364,102 +420,74 @@ Depois que todos os valores dos gráficos estiverem corretamente plotados podemo
 
 \textbf{Tornando os gráficos acessíveis a leitores de tela}
 
-{Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso temos algumas abordagens eficientes:
-\begin{itemize}
-    \item Adicionar o atributo \lstinline{alt}: Os leitores de tela falam texto alternativo sem permitir que os usuários acelerem ou pulem, portanto, as informações sejam descritivas, mas sucintas.
-    \item Forneça os dados de algum outro modo que não somente por gráficos: Incluir um link para um CSV ou outro formato de dados legível por máquina para que pessoas com deficiência visual possam navegar pelos dados do gráfico com um leitor de tela é essencial.
-    \item Adicionar um título claro em cada gráfico plotado: A primeira coisa que será lida em um gráfico é o seu título, isso facilitará a experiência dos usuário de leitor de tela, que ao perceber que aquele gráfico não é o que ele precisa ver no momento poderá pular a leitura ou modificar o filtro em questão.
-    \item Rotular os dados diretamente: Legendas podem ser não eficientes para usuários daltônicos ou deficientes visuais que podem ter dificuldade em combinar as cores do gráfico com as da legenda. Rotulando também diminuirá o trabalho de varredura para frente e para trás tentando combinar a legenda com os dados.
-    \item Verifique se o contraste de cores do gráfico está dentro dos padrões da WCAG.
-    \item Utilizar espaços em branco para separar gráficos que são empilhados. O uso criterioso do espaço em branco aumenta a legibilidade, ajudando a demarcar e distinguir as diferentes seções sem depender apenas da cor. Isso também pode complementar as opções de cores acessíveis, ajudando os usuários a distinguir a diferença entre as cores que identificam seções separadas.
-    \item Adicionar explicações ou conclusões em linguagem clara: Ao aplicar determinados filtros apresente algum tipo de conclusão do gráfico plotado. Esse recurso só deve tá disponível quando a navegação por tab for identificada. 
-\end{itemize}
+{Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso temos algumas abordagens eficientes. 
+
+O gráfico exemplificado abaixo \ref{fig:grafico-d3} foi construído levando em consideração as barreiras de acessibilidade que um deficiente visual frequentemente se depara. Logo, para diminuir essas barreiras as decisões tiveram como apoio as diretrizes WCAG \ref{sec:apendice} que se adéquam ao proposito do \textit{e-commerce} e a construção do gráfico com D3.js \cite{D3} se deu com o apoio das mesmas. 
 
 
+\begin{figure}[ht]
+  	\center
+    \includegraphics[width=0.7\textwidth]{images/barchart-tooltip.png}
+    \caption{Gráfico do tipo de barras estacadas com tooltip de visualização.}
+    \label{fig:grafico-d3}
+\end{figure} 
+
+}
+
+\newpage
+{
+
+{Tomando como exemplo a figura \ref{fig:grafico-d3}, a tabela \ref{Barreiras e decisões na construção de um gráfico acessível} logo abaixo exemplifica cada barreira de acessibilidade e sua respectiva tomada de decisão.}
+\vspace*{20px}
+
+\noindent\begin{minipage}{\linewidth}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|l|p{400px}|} 
+\hline
+\rowcolor[HTML]{ECF4FF} 
+{\color[HTML]{333333}  Barreira de acessibilidade} &
+  Tomada de decisão  \\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}Falta de atributo alt ou atributo não \\ descritivo\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Se faz necessário o uso do atributo alt. Os leitores de tela falam texto alternativo sem permitir que os usuários acelerem \\ou pulem,  portanto, as informações sejam descritivas, mas sucintas.\end{tabular} \\ \hline
+Existência de títulos não objetivos &
+  \begin{tabular}[c]{@{}l@{}}Adicionar um título claro em cada gráfico plotado: A primeira coisa que será lida em um gráfico é o seu título,   isso \\facilitará a experiência dos usuário de leitor  de tela, que ao  perceber que aquele gráfico não é o que  ele precisa \\ ver no momento poderá pular a leitura ou modificar o filtro em questão.\end{tabular} \\ \hline
+Falta de rotulação nos dados &
+  \begin{tabular}[c]{@{}l@{}}Legendas podem ser não eficientes para usuários daltônicos ou deficientes visuais que podem ter dificuldade em \\ combinar as cores do gráfico  com as da legenda.  Rotulando também diminuirá o trabalho de varredura para frente \\ e para trás tentando combinar a legenda com os dados. \end{tabular}\\ \hline
+Dados fornecidos apenas por gráficos &
+  \begin{tabular}[c]{@{}l@{}}Forneça os dados de algum outro modo que não somente por gráficos: Incluir um link para um CSV ou outro formato \\ de dados legível por máquina  para que pessoas com deficiência visual possam navegar pelos dados do gráfico com\\ um leitor de tela é essencial.\end{tabular} \\ \hline
+  
+\begin{tabular}[c]{@{}l@{}}Pouco contraste entre o fundo do \\ gráfico e o conteúdo do gráfico\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Verifique se o contraste de cores do gráfico está dentro dos padrões da WCAG \cite{WCAG}.\end{tabular} \\ \hline
+  
+\begin{tabular}[c]{@{}l@{}}Separação não clara entre os \\setores dos gráficos\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Utilizar espaços em branco para separar gráficos que são empilhados.  O uso criterioso do espaço em branco aumenta\\ a legibilidade, ajudando a demarcar e distinguir as diferentes seções sem depender apenas da cor. Isso também pode \\ complementar as opções de cores acessíveis,  ajudando os usuários a distinguir a diferença entre as cores que identificam \\seções separadas.\end{tabular} \\ \hline
+
+\end{tabular}%
+}
+\captionof{table}{Barreiras e decisões na construção de um gráfico acessível}
+\label{Barreiras e decisões na construção de um gráfico acessível}
+
+\end{minipage}
+
+}
+
+\vspace*{20px}
 \textbf{Gráficos como componentes reutilizáveis}
 
 {Quando se trabalha com React \cite{REACT} ao se criar um componente devemos garantir que esse componente possa ser reutilizável, para que isso seja possível no momento da criação de cada componente deve-se ter em mente que quando menor e mais genérico for o componente mais ele será escalável e com isso facilitará a construção de componentes maiores.
 
 Para facilitar a construção como módulos separados cada tipo de gráfico se tornou um componente reutilizável. Em cada componente desses contaria com suas funções e particularidades porém com a flexibilidade de ser um componente genérico, onde todos os dados são populados através de propriedades que são repassadas do componente pai para o componente filho. 
 
-\lstdefinelanguage{JavaScript}{
-  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
-    new, return, this, typeof, var, void, while, with},
-  % Literals, primitive types, and reference types.
-  morekeywords=[2]{false, null, true, boolean, number, undefined,
-    Array, Boolean, Date, Math, Number, String, Object},
-  % Built-ins.
-  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
-  sensitive,
-  morecomment=[s]{/*}{*/},
-  morecomment=[l]//,
-  morecomment=[s]{/**}{*/}, % JavaDoc style comments
-  morestring=[b]',
-  morestring=[b]"
-}[keywords, comments, strings]
 
-{\begin{lstlisting}[language=javascript,caption=exemplo de um componente de gráfico]
-const draw = (props) => {
-    d3.select('.vis-barchart > *').remove();
-    const data = props.data;
-    const margin = {top: 20, right: 20, bottom: 30, left: 40};
-    const width = props.width - margin.left - margin.right;
-    const height = props.height - margin.top - margin.bottom;
-    
-    // criando o svg
-    let svg = d3.select('.vis-barchart').append('svg')
-        .attr('width',width + margin.left + margin.right)
-        .attr('height',height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    // formatando os dados
-    data.forEach(function(d) {
-        d.age = +d.age;
-    });
-
-    // Dimensionar o intervalo dos dados nos domínios
-    let x = d3.scaleBand()
-      .range([0, width])
-      .padding(0.1);
-    let y = d3.scaleLinear()
-      .range([height, 0]);
-    x.domain(data.map(function(d) { return d.name; }));
-    y.domain([0, d3.max(data, function(d) { return d.age; })]);
-
-    // Adicionando os retângulos para o gráfico de barras
-    svg.selectAll(".bar")
-        .data(data)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("x", function(d) { return x(d.name); })
-        .attr("width", x.bandwidth())
-        .attr("y", function(d) { return y(d.age); })
-        .attr("height", function(d) { return height - y(d.age); });
-
-    // Adicionando o eixo X
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
-
-    // Adicionando o eixo Y
-    svg.append("g")
-        .call(d3.axisLeft(y));
-}
-
-export default draw;
-\end{lstlisting}}
 
 }
-
 }
 
-Para usar esse componente basta chamá-lo passando as \lstinline{props} que são necessárias para a plotagem do gráfico.
-\begin{lstlisting}[language=javascript, caption=Usando um componente reutilizável]
-<BarChart data={data} width={1000} height={550}/>
-\end{lstlisting}
 
-}
+
+
 \subsection{Fase 4: Testes e avaliações de acessibilidade}
 {Durante e após a construção do e-commerce de acordo com os
 padrões Web e as diretrizes de acessibilidade, é necessário efetuar testes para garantir sua acessibilidade. Esses testes foram executados de dois modos: 
