@@ -1,27 +1,54 @@
 \newpage
 \section{Introdução}
 \label{sec:introducao}
+ 
+{Com a pandemia de COVID-19 houveram várias mudanças no cenário econômico brasileiro, lojas físicas tiveram que fechar as portas enquanto as lojas virtuais, mais conhecidas como e-commerce, tiveram um crescimento muito acentuado. Uma pesquisa feita pelo BigData Corp em parceria com o PayPal Brasil \cite{ECOMMERCE} afirma que no ano de 2021 houve um aumento de 22,05\% no número de lojas on-line, o que marca cerca de 1,6 milhões de sites de e-commerce. Esse aumento de lojas on-line refletem o hábito de consumo dos indivíduos, que sempre buscam uma forma de realizar suas compras de forma ágil e descomplicada. Porém existe uma parcela da população que não conseguem efetuar compras em lojas on-line, pois tais lojas não estão preparadas para lidar com as necessidades desse público.
 
-\textcolor{violet}{Nesta seção você deve falar em  qual contexto seu trabalho está inserido. 
-Qual o problema que está sendo abordado e qual a proposta de solução (em linhas gerais). 
-Qual a motivação/justificativa para o desenvolvimento da solução proposta (Dentre as possibilidades de solução porque essa foi a escolhida). O texto pode ser dividido em subseções.} 
+
+}
 \subsection{Contexto}
+{
+
+De acordo com a  Lei Brasileira de Inclusão Da Pessoa com Deficiência \cite{brasil2015}, 
+considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.
+
+Ainda no ano de 2019, foi realizada uma pesquisa para entender melhor um pouco sobre o indivíduos com deficiência e segundo a Pesquisa Nacional de Saúde \cite{PNS} existiam quase 7 milhões de pessoas com deficiência visual, onde aproximadamente 4,2\% eram pessoas com 18 anos ou mais. Para entender um pouco mais esse nicho de consumidores a Accenture produziu um relatório \cite{ACCENTURE} sobre Design Inclusivo e suas vantagens para um negócio e os dados demonstraram que no Brasil as pessoas com deficiência possuem uma renda disponível de 5,3 milhões de dólares. Ou seja, essa parcela da população apresenta um poder aquisitivo disponível para efetuar compras, mas muitas empresas ainda não pensaram ou se preocuparam em abocanhar essa parcela da população.  
+
+Com as lojas on-line não estão preparadas para lidar essa parcela da população, um grande público acaba sendo marginalizado. Esse ato acaba ferindo um dos direitos básicos conferido de acordo com a lei brasileira de inclusão da pessoa com deficiência \cite{brasil2015}, o que torna obrigatória a acessibilidade em ambientes virtuais, porém mesma havendo uma legislação, isso não foi suficiente para que houvesse uma mudança dentro do ambiente web. 
+
+ \subsubsection{Acessibilidade WEB}
+ 
+ {Acessibilidade “é a possibilidade de qualquer pessoa usufruir todos os benefícios
+da sociedade, inclusive o de usar a Internet” \cite{Ferreira_2015}. A acessibilidade na Web possibilita que pessoas com deficiência não tenham barreiras ou a diminuição das mesmas ao se navegar em uma página. Porém, tornar esse conteúdo acessível pode ser benéfico para um outro grupo de usuários, que podem não ter deficiência mas utilizam a aplicação de um modo diferente. \newpage
+Quando um sistema é considerado acessível não há barreiras que impeçam o acesso dos usuários.
+No presente trabalho será focado a diminuição de barreiras de acesso ã pessoas com deficiências e limitações visuais. As necessidades que uma pessoa com deficiência visual tem ao navegar pelos sites são semelhantes à de uma pessoa sem essa deficiência: se atualizar com as últimas notícias, se entreter através de jogos, realizar operações bancárias, fazer compras, etc. A acessibilidade é um dos fatores que compõem a qualidade de um site, por isso a preocupação de diversas instituições e governos em relação a este assunto \cite{sbqs}.
+
+O processo de tornar um site ou sistema acessível deixou de ser tema exclusivo do universo das pessoas e começou a se tornar um tema recorrente diariamente. O engajamento das pessoas para eliminar barreiras de acesso é o fator mais importante para iniciar o processo de acessibilização. Dado esse inicio é necessário muito empenho para promover avaliações, correções e melhorias. Vale ressaltar que dificilmente um site ou aplicação será 100\% acessível, uma vez que existem muitos tipos diferentes de deficiências com peculiaridades a seu modo, porém a eliminação de barreiras é algo que pode ser tangível e mensurável. 
+ }
+
+
+}
 \subsection{Problema e solução proposta}
+{Diante da problemática, onde deficientes visuais, mesmo tendo seus direitos garantidos por lei \cite{brasil2015} e sendo consumidores em potencial, acabam sendo negligenciados por empresas que optam por estender seu nicho de mercado para o  meio on-line. Então, os objetos de estudo deste trabalho são: 
+\begin{itemize}
+    \item Falta de experiência completa para pessoas com deficiência visual ocasionam desistência de compras. 
+    \item Entender as diretrizes WCAG \cite{WCAG} e como aplicá-las de forma correta e eficiente.
+    \item Em um sistema antigo quais as melhores formas de adaptá-lo e torná-lo acessível para pessoas com deficiência visual. 
+    \item O pensamento inclusivo deve vir antes de qualquer implementação e como Style Guide \cite{STYLE} pode auxiliar em tomadas de decisões.
+    \item Tecnologias assistivas e suas abordagens de leituras de tela.
+    \item Elementos visuais complexos devem ser acessíveis e navegáveis por todas as formas possíveis. 
+
+\end{itemize}
+ 
+ Desse modo, o presente estudo apresenta um relato de abordagens eficientes usadas para transformar um e-commerce sem acessibilidade em acessível para pessoas com deficiência visual, sendo baseado em um guia de acessibilidade construído com o proposito de facilitar o entendimento de diretrizes WCAG e um style guide para nortear os desenvolvedores quanto a comportamentos esperados e que faziam sentido no contexto de limitações visuais. 
+}
 \subsection{Justificativa}
 
-Exemplo de referência para figura
+{
 
-Como visto na Figura~\ref{fig:lifecycle_phase} $\ldots$
 
-\begin{figure}[ht]
-    \center
-    \includegraphics[scale=0.7]{images/lifecycle_phase.png}
-    \caption{Testing levels based on software development phase (Sommerville, 2011).}
-    \label{fig:lifecycle_phase}
-\end{figure}
+Existe uma ideia equivocada de que pessoas com deficiência possuem apenas necessidades relacionadas exclusivamente a sua deficiência, quando na verdade essas pessoas necessitam de tudo o que uma pessoa sem deficiência necessita somado as particularidades atreladas a sua deficiência. A acessibilidade web surge como um modificador de vida trazendo conforto e praticidade para os indivíduos. Porém esse conforto e praticidade não costuma ocorrer tão facilmente. Mesmos as pessoas com deficiência tendo voz, poder e direitos dentro da sociedade eles passam a ser escanteados pelas potenciais empresas que criam lojas on-line. 
 
-Exemplo de referência para bibliografia
-
-De acordo com \cite{sommerville2011software} $\ldots$
-
-Exemplo de citação bibliográfica.\cite{WCAG}
+Por mais que a internet esteja difundida nos dias de hoje, as pessoas com deficiência, consumidores em potencial, acabam por serem esquecidos e negligenciados. Logo esse trabalho se faz relevante por apresentar opções para assegurar os direitos do público-alvo em questão e 
+demonstrar a importância da construção de e-commerce acessíveis, pois existe um nicho de mercado que está sendo deixado de lado e poderia ser uma vantagem competitiva às empresas que adotassem as técnicas de acessibilidade em seus sites de e-commerce.
+}

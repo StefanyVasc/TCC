@@ -35,7 +35,7 @@ Guiado por esses quatro princípios surgiram as diretrizes, que são os itens qu
 \end{itemize}
 
 Dentre todas as diretrizes WCAG \cite{WCAG} que existem foram escolhidas algumas que fizessem sentido no contexto de diminuição de barreiras de acesso para deficientes visuais. Toda a construção do \textit{e-commerce} foi baseada nas diretrizes listadas no Apêndice \ref{sec:apendice}: 
-\
+
 }
 
 \newpage
@@ -187,7 +187,6 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
 {\begin{itemize}
     \item O primeiro passo a se fazer foi organizar o \textit{HTML} \cite{HTML} de forma logica e semântica, onde cada tag deve ser usada para o fim que ela foi criada seguindo uma ordem que seja compreensível além de corresponder ao conteúdo desejado. Nesse ponto em um sistema legado muitos componentes estavam escritos de maneira errada, algumas tags \textit{HTML} \cite{HTML} estavam sendo usadas com um proposito diferente do que ela foi criada e para esses casos utilizamos a abordagem \textit{WAI-ARIA} \cite{WAI-ARIA} para que o leitor conseguisse entender o que era cada tag daquela e também fosse possível fazer a navegação via teclado.
 
-\newpage
 
 {\textbf{Caso de uso 1:} Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo role do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
 
@@ -391,7 +390,6 @@ a:focus, a:hover {
 }
 }
 
-\newpage
 \subsection{Fase 3: Construção do dashboard acessível}
 {Para a construção do \textit{dashboad} com gráficos foi utilizado a biblioteca D3.js \cite{D3} que é usada para visualização de informação. Essa biblioteca permite que seja construído aplicações em que os dados entram puros e são dinamicamente associados em representações gráficas. Com o D3 o DOM \cite{DOM} (Document Object Model)  pode ser facilmente manipulado já que ele usa usa os padrões da web como HTML \cite{HTML}, CSS \cite{CSS}, SVG para renderizar gráficos de visualização poderosos.
 
@@ -402,7 +400,7 @@ a:focus, a:hover {
 \end{figure} 
 
 }
-
+\vspace*{50px}
 {\textbf{Construção de gráficos com D3.js:}
 
 No \textit{e-commerce} foi decidido não construir o gráfico inteiramente com D3.js, pois a abordagem normal presente não facilitaria o reaproveitamento para a criação dos componentes. Quando um gráfico é plotado somente com D3.js pode haver problemas de performance, visto que o React não estava preparado para esse tipo de renderização contínua criada ao se aplicar filtros e interações nos gráficos. Dessa forma, a abordagem mais coerente era usar as tags HTML normais e quando era necessário feito a criação do elementos e interações usando o D3.js.
@@ -417,7 +415,7 @@ O próximo passo é criar por fim o conteúdo do gráfico de forma visual. Com o
 
 Depois que todos os valores dos gráficos estiverem corretamente plotados podemos lidar com as interações que estarão no gráfico. Todas as interações presentes via mouse devem também estarem disponíveis via teclado, ou seja, se houver um interação de clique de mouse deve haver uma interação de pressão de tecla. Para auxiliar na construção dessas interações pode-se usar a função \lstinline{.on()} que ficará responsável por agir como um \textit{event listener} de um elemento, onde qualquer tipo de interação será percebida. Essa função recebe dois argumentos, sendo o primeiro o tipo de evento e o segundo uma função que será disparava quando essa evento for ouvido. 
 
-
+\vspace*{50px}
 \textbf{Tornando os gráficos acessíveis a leitores de tela}
 
 {Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso temos algumas abordagens eficientes. 
