@@ -14,97 +14,106 @@ No total foram preciso quatro fases, sendo a primeira fase voltada para o entend
 }
 
 \subsection{Fase 1: Pesquisa e entendimento}
-{A construção do \textit{e-commerce} ocorreu em 4 fases, sendo a primeira fase voltada para o entendimento do problema e do uso das novas tecnologias como também entender as limitações do projeto em questão de performance e se seria possível ou não adicionar novas bibliotecas caso fosse necessário. Ainda na primeira fase, após concluída a fase de estudo e exploração o time optou por construir um guia de acessibilidade que seria usado na fase de desenvolvimento do projeto, essa decisão se deu porque a documentação das diretrizes de acessibilidade é bastante extensa e engloba muitos tipos de deficiência, sendo assim tornando-se de difícil entendimento para todos que estão lendo. Para complementar o guia de acessibilidade foi construído um \textit{style guide} para guiar todos os desenvolvedores a respeito de aspectos importantes que devem estar presentes na \textit{User Interface (UI)}}
+{Para começar a construção do \textit{e-commerce} se fazia necessário entender melhor o problema que iria ser enfrentado e as tecnologias usadas afim de entender as limitações do projeto em questão de performance. Com o entendimento das limitações do projeto os desenvolvedores teriam a visão da possibilidade ou não de adicionar novas bibliotecas ao decorrer do desenvolvimento caso fosse necessário. 
+
+Após concluída a fase de estudo e exploração surgiu a necessidade da construção de um guia de acessibilidade que seria usado na fase de desenvolvimento do projeto, essa decisão se deu porque a documentação das diretrizes de acessibilidade se mostrou bastante extensa e englobava muitos tipos de deficiência, tornando o entendimento muito dificultoso para todos que estão lendo. Para complementar o guia de acessibilidade foi construído um \cite{STYLE}{\textit{style guide}} para guiar todos os desenvolvedores a respeito de aspectos importantes que devem estar presentes na \textit{User Interface (UI)}}
 
 \subsubsection{Guia de acessibilidade}
-{Quando falamos em acessibilidade precisamos citar o WCAG \cite{WCAG} ou \textit{Web Content Accessibility Guidelines} é um conjunto de diretrizes que estipula os padrões de acessibilidade digital que devem ser seguidos pelos sites. Essas recomendações foram todas desenvolvidas pelo W3C \cite{W3C}, o consórcio \textit{World Wide Web}.
+{
+Quando falamos em acessibilidade precisamos citar o WCAG \cite{WCAG20} ou \textit{Web Content Accessibility Guidelines} é um conjunto de diretrizes que estipula os padrões de acessibilidade digital que devem ser seguidos pelos sites. Essas recomendações foram todas desenvolvidas pelo W3C \cite{W3C}, o consórcio \textit{World Wide Web}.
 
-O WCAG é responsável por orientar de forma muito simples como identificar e implementar técnicas que eliminam barreiras de acesso para pessoas com deficiência e ele foi construído sob quatro princípios:
+O WCAG \cite{WCAG21} é responsável por orientar de forma muito simples como identificar e implementar técnicas que eliminam barreiras de acesso para pessoas com deficiência e ele foi construído sob quatro princípios:
 \begin{itemize}
-\item Perceptível: As informações e os componentes da interface do usuário devem ser apresentados de formas que possam ser percebidas pelo usuário.
-\item Operável: Os componentes da interface de usuário e a navegação devem ser operáveis. O usuário não pode ter impedimentos para utilizar a interface.
-\item Compreensível: A informação e a operação da interface de usuário devem ser compreensíveis. 
-\item Robusto: O conteúdo deve ser robusto o suficiente para poder ser interpretado de forma confiável por uma ampla variedade de agentes de usuário, incluindo tecnologias assistivas. a aplicação deve ser bem construída, de forma a ser acessível para uma gama maior de navegadores e tecnologias assistiva
+\item Perceptível: As informações e os componentes da interface do usuário devem ser apresentados em formas que possam ser percebidas pelo usuário.\cite{WCAG20}
+\item Operável: Os componentes da interface e a navegação devem ser operáveis \cite{WCAG20}. O usuário não pode ter impedimentos para utilizar a interface.
+\item Compreensível: A informação e a operação da interface de usuário devem ser compreensíveis. \cite{WCAG20}
+\item Robusto: O conteúdo deve ser robusto o suficiente para poder ser interpretado de forma confiável por uma ampla variedade de agentes de usuário, incluindo tecnologias assistivas. A aplicação deve ser bem construída, de forma a ser acessível para uma gama maior de navegadores e tecnologias assistiva.\cite{WCAG20}
 \end{itemize}
 
 Guiado por esses quatro princípios surgiram as diretrizes, que são os itens que fornecem os objetivos básicos que devem ser atingidos dentro de cada principio, que são tópicos menores e mais específicos. Dentro das diretrizes existe critérios de sucesso, esse sucesso está atrelado a nível de conformidade. Então quanto mais conforme o \textit{e-commerce} está adequado à aquela diretriz maior é o critério de sucesso. Os critérios são definidos três níveis de conformidade:
 \begin{itemize}
-\item No nível A \ref{Diretrizes nível A} estão os critérios mais simples, que representam apenas barreiras mais significativas de acessibilidade. Ao obter sucesso nesse critério já é possível eliminar uma boa quantidade de barreiras de acesso. 
-\item No nível AA \ref{Diretrizes nível AA}, é um nível acima do A, o que significa que atingindo esse nível as barreiras do nível A foram somadas a mais barreiras e todas foram eliminadas.
-\item Nível AAA \ref{Diretrizes nível AAA}, geralmente são um refinamento das anteriores, sendo mais detalhadas e que trazem um nível mais sofisticado de acessibilidade.
+    \item No nível A \ref{Diretrizes nível A} estão os critérios mais simples, que representam apenas barreiras mais significativas de acessibilidade. Ao obter sucesso nesse critério já é possível eliminar uma boa quantidade de barreiras de acesso. 
+    \item No nível AA \ref{Diretrizes nível AA}, é um nível acima do A, o que significa que atingindo esse nível as barreiras do nível A foram somadas a mais barreiras e todas foram eliminadas.
+    \item Nível AAA \ref{Diretrizes nível AAA}, geralmente são um refinamento das anteriores, sendo mais detalhadas e que trazem um nível mais sofisticado de acessibilidade.
 \end{itemize}
 
-Dentre todas as diretrizes WCAG \cite{WCAG} que existem foram escolhidas algumas que fizessem sentido no contexto de diminuição de barreiras de acesso para deficientes visuais. Toda a construção do \textit{e-commerce} foi baseada nas diretrizes listadas no Apêndice \ref{sec:apendice}: 
+Dentre todas as diretrizes WCAG \cite{WCAG21} que existem foram escolhidas algumas que fizessem sentido no contexto de diminuição de barreiras de acesso para deficientes visuais. Toda a construção do \textit{e-commerce} foi baseada nas diretrizes listadas no Apêndice \ref{sec:apendice}: 
 
 }
 
 \newpage
 \subsubsection{Style Guide}
-{O \textit{style guide} \cite{STYLE} é um documento que concentra as diretrizes de design de um projeto para ajudar e alinhar todos os desenvolvedores. Com o \textit{style guide} é possível manter a consistência visual dentro do projeto. Para a construção do \textit{style guide} do \textit{e-commerce} mantivemos o foco em três informações básicas:
+{O \textit{style guide} \cite{STYLE} é um documento que concentra as diretrizes de design de um projeto para ajudar e alinhar todos os desenvolvedores. Com o \cite{STYLE}{\textit{style guide}} é possível manter a consistência visual dentro do projeto. Para a construção do \cite{STYLE}{\textit{style guide}} do \textit{e-commerce} mantivemos o foco em três informações básicas:
 \begin{itemize}
-\item Cores
-\item Tipografia
-\item Elementos de UI
+    \item Cores
+    \item Tipografia
+    \item Elementos de UI
 \end{itemize}
 
-\vspace*{20px}
-Cores:  Quando falamos em cores temos que ter em mente duas coisas: contraste e luminosidade. Existe algumas deficiências e limitações visuais que fazem com que a cor sofra mudanças então é preciso que o \textit{e-commerce} tenha uma paleta de cores acessível que garanta o contraste ideal entre as cores \ref{Diretrizes nível AA}. 
+{\centerline{\textbf{Cores}}}
+Quando falamos em cores é preciso ter em mente duas coisas: contraste e luminosidade. Existe algumas deficiências e limitações visuais que fazem com que a cor sofra mudanças então é preciso que o \textit{e-commerce} tenha uma paleta de cores acessível que garanta o contraste ideal entre as cores \ref{Diretrizes nível AA}. No exemplo abaixo da figura \ref{fig1:style} está sendo demonstrado uma paleta de cores inclusiva criada pela ferramenta \textit{Adobe Color Wheel} \cite{ADOBE} . 
 \begin{figure}[ht]
   		\centering
         \includegraphics[width=1.0\textwidth]{images/paleta_de_cores_acessiveis.png}
-        \caption{Exemplo de uma paleta de cores acessível feita no \textit{Adobe Color}}
+        \caption{A imagem exemplifica uma paleta de cores onde todas as cores são acessíveis. Para a construção dessa paleta de cores foi utilizado o site do \textit{Adobe Color} \cite{ADOBE}.}
+        \label{fig1:style}
 \end{figure}  
- 
-\vspace*{50px}
-É de extrema importância verificar como ficaria essas cores pela visão de pessoas que possuem algum tipo de daltonismo. Ao perceber que a paleta de cores ainda está com um contraste aceitável e de no mínimo 7:1 ela está pronta para o uso, seguindo a diretriz nível AAA de contraste \ref{Diretrizes nível AAA}. 
+
+É de extrema importância verificar como ficaria essas cores pela visão de pessoas que possuem algum tipo de daltonismo. Ao perceber que a paleta de cores ainda está com um contraste aceitável e de no mínimo 7:1 ela está pronta para o uso, seguindo a diretriz nível AAA de contraste \ref{Diretrizes nível AAA}. Na figura \ref{fig2:style} é possível observar os diferentes tipos de daltonismo e como a paleta de cores se comporta diante das limitações de visão de pessoas com daltonismo. Essa paleta foi criada utilizando as ferramentas de acessibilidade do \textit{Adobe Color Wheel} \cite{ADOBE}.
  \begin{figure}[ht]
         \centering
     	\includegraphics[width=1.0\textwidth]{images/paleta_daltonismo.png}
-        \caption{simulação de daltonismo feita no \textit{Adobe Color}}
+        \caption{A imagem simula o comportamento de uma paleta de cores acessível diante dos tipos de daltonismo.}
+        \label{fig2:style}
 \end{figure}  
 
 
 \newpage
-Tipografia: A tipografia não é apenas escolher uma fonte legal para o seu projeto, junto com ela devemos levar em consideração vários aspectos que são importantes e foram listados nas diretrizes: 
+
+{\centerline{\textbf{Tipografia}}}
+A tipografia não é apenas escolher uma fonte legal para o seu projeto, junto com ela devemos levar em consideração vários aspectos que são importantes e foram listados nas diretrizes: 
 \begin{itemize}
-\item Espaçamento
-\begin{itemize}
-\item O espaçamento deve ser bem planejado para que seja possível aplicar um zoom de 200\%\ e ou ainda em caso de redimensionamento de tela o texto deve permanecer legível. 
-\end{itemize}
-\item Altura de linhas
-\begin{itemize}
-\item Sempre que houver um redimensionamento os textos não devem perder legibilidade.
-\end{itemize}
-\item Hierarquia tipográfica
-\begin{itemize}
-\item Sempre que o conteúdo da tela for dividido em sessões, todas devem possuir títulos claros, com níveis de hierarquia bem definidos, para assim manter a hierarquia da informação de uma forma concisa. 
-\end{itemize}
-\item Pesos, cores e contraste. 
-\begin{itemize}
-\item O contraste entre textos e telas também deve ser mantido num padrão de no mínimo 4:5:1
-\end{itemize}
+    \item Espaçamento
+    \begin{itemize}
+        \item O espaçamento deve ser bem planejado para que seja possível aplicar um zoom de 200\%\ e ou ainda em caso de redimensionamento de tela o texto deve permanecer legível. \ref{Diretrizes nível AA}
+    \end{itemize}
+    \item Altura de linhas
+    \begin{itemize}
+        \item Sempre que houver um redimensionamento os textos não devem perder legibilidade. \ref{Diretrizes nível AA}
+    \end{itemize}
+    \item Hierarquia tipográfica
+    \begin{itemize}
+        \item Sempre que o conteúdo da tela for dividido em sessões, todas devem possuir títulos claros, com níveis de hierarquia bem definidos, para assim manter a hierarquia da informação de uma forma concisa. \ref{Diretrizes nível AAA}
+    \end{itemize}
+    \item Pesos, cores e contraste. 
+    \begin{itemize}
+        \item O contraste entre textos e telas também deve ser mantido num padrão de no mínimo 4:5:1. \ref{Diretrizes nível A}
+    \end{itemize}
 \end{itemize}
 
+A figura \ref{fig3:tipografia} foi criada usando os recursos de acessibilidade presentes na ferramenta \textit{Adobe Color Wheel} \cite{ADOBE}. A partir da cor do texto e da cor de fundo é possível saber a proporção de contraste e se está dentro do esperado nas diretrizes WCAG \cite{WCAG20}.
+
 \begin{figure}[ht]
-        \centering
-    	\includegraphics[width=1.0\textwidth]{images/contrast_check.png}
-        \caption{Checagem do contraste de textos e fundo no \textit{Adobe Color}}
+    \centering
+	\includegraphics[width=1.0\textwidth]{images/contrast_check.png}
+    \caption{A figura exemplifica a checagem de contraste entre texto e fundo realizado por meio do site  \textit{Adobe Color Wheel} \cite{ADOBE}}
+    \label{fig3:tipografia}
 \end{figure} 
 
 \newpage
-Elementos de UI: Este tópico compreende os elementos que estarão presentes na UI, logo serão apresentados exemplos e listagem desses componentes. Na construção desses elementos é feito o detalhamento visual, ou seja, os tamanhos, espaços, margens, cores que ele deve possuir como também os seus estados comportamentais, se houver um erro como ele se comporta, em caso de elemento focado como deve ficar o elemento.
+{\centerline{\textbf{Elementos da \textit{interface} do usuário}}}
+Este tópico compreende os elementos que estarão presentes na \textit{interface}, logo serão apresentados exemplos e listagem desses componentes. Na construção desses elementos é feito o detalhamento visual, ou seja, os tamanhos, espaços, margens, cores que ele deve possuir como também os seus estados comportamentais, se houver um erro como ele se comporta, em caso de elemento focado como deve ficar o elemento.
 
-
-Com o componente \textit{Card} da figura \ref{fig:UI_componentes} abaixo podemos analisar onde as diretrizes foram aplicadas e como elas impactam na construção de componentes mais complexos de UI. 
+Com o componente \textit{Card} da figura \ref{fig:UI_componentes} abaixo podemos analisar onde as diretrizes foram aplicadas e como elas impactam na construção de componentes mais complexos da \textit{interface} do usuário.  
 
 \begin{figure}[ht]
         \centering
     	\includegraphics[width=0.38\textwidth]{images/ui-exemplo.png}
-        \caption{Exemplo de um componente montado com elementos de UI}
+        \caption{Exemplo de um componente montado com elementos da interface do usuário}
         \label{fig:UI_componentes}
 \end{figure}
 
-Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de 1 a 8 pontuados na Figura \ref{fig:UI_componentes} com as diretrizes aplicadas em cada ponto juntamente com sua breve descrição. Foi pontuado também o nível em que cada diretriz se encontra. Para maiores detalhes sobre as diretrizes consultar o apêndice \ref{sec:apendice}
+Abaixo na tabela \ref{elementos de UI} foi referenciado os identificadores de 1 a 8 apontados na Figura \ref{fig:UI_componentes} com as diretrizes aplicadas em cada ponto juntamente com sua breve descrição. Foi especificado o nível em que cada diretriz se encontra. Para maiores detalhes sobre as diretrizes consultar o apêndice \ref{sec:apendice}.
 {
 
 
@@ -166,7 +175,7 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
         Mensagens de status & AA & Qualquer tipo de mensagem que é resultado de uma ação deve ser transmitida sem que ocorra uma mudança de foco na tela.\\
     \hline
 
-\end{tabular}%
+\end{tabular}
 }
 \label{elementos de UI}
 
@@ -175,8 +184,8 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
 }}
 
 
-\subsection{Fase 2: Adaptação e construção da \textit{UI} acessível e usável usando o guia de acessibilidade e \textit{style guide}}
-{A segunda fase se concentrou na adaptação da \textit{UI} e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias. Nessa fase o foco principal se dividiu em duas vertentes:
+\subsection{Fase 2: Adaptação e construção da \textit{interface} do usuário acessível e usável usando o guia de acessibilidade e \textit{style guide}}
+{A segunda fase se concentrou na adaptação da \textit{interface} do usuário e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias. Nessa fase o foco principal se dividiu em duas vertentes:
 \begin{itemize}
 \item Criar abordagens inteligentes para problemas de acessibilidade em imagens, formulários e navegação e a adaptação de componentes com \textit{HTML} \cite{HTML} não semântico para semântico.
 \item  Adaptar e criar componentes para que as tecnologias assistivas pudessem entendê-los corretamente e assim ter uma a navegação por teclado eficaz.
@@ -185,10 +194,11 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
 }
 \subsubsection{Abordagens inteligentes e adaptação de componentes}
 {\begin{itemize}
-    \item O primeiro passo a se fazer foi organizar o \textit{HTML} \cite{HTML} de forma logica e semântica, onde cada tag deve ser usada para o fim que ela foi criada seguindo uma ordem que seja compreensível além de corresponder ao conteúdo desejado. Nesse ponto em um sistema legado muitos componentes estavam escritos de maneira errada, algumas tags \textit{HTML} \cite{HTML} estavam sendo usadas com um proposito diferente do que ela foi criada e para esses casos utilizamos a abordagem \textit{WAI-ARIA} \cite{WAI-ARIA} para que o leitor conseguisse entender o que era cada tag daquela e também fosse possível fazer a navegação via teclado.
+    \item O primeiro passo a se fazer foi organizar o \textit{HTML} \cite{HTML} de forma logica e semântica, onde cada \textit{tag} deve ser usada para o fim que ela foi criada seguindo uma ordem que seja compreensível além de corresponder ao conteúdo desejado. Nesse ponto em um sistema legado muitos componentes estavam escritos de maneira errada, algumas \textit{tags} \textit{HTML} \cite{HTML} estavam sendo usadas com um proposito diferente do que ela foi criada e para esses casos utilizamos a abordagem \textit{WAI-ARIA} \cite{WAI-ARIA} para que o leitor conseguisse entender o que era cada \textit{tag} daquela e também fosse possível fazer a navegação via teclado.
 
-
-{\textbf{Caso de uso 1:} Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo role do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 1}: Transformando botão inacessível em acessível} 
+Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo \lstinline{role} do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
 
 \begin{lstlisting}[language=html, caption=Componente de botão antes de receber boas praticas e acessibilidade]
     <div
@@ -198,7 +208,7 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
       Adicionar ao carrinho 
     </div>
 \end{lstlisting}}
-{\begin{lstlisting}[language=html,caption=Adaptação do componente de botão usando \textit{WAI-ARIA}]
+{\begin{lstlisting}[language=html,caption=Adaptação do componente de botão usando \textit{WAI-ARIA} \cite{WAI-ARIA}]
 <div 
     role="button" 
     tabIndex="0" 
@@ -212,13 +222,13 @@ Na tabela \ref{elementos de UI} abaixo foram referenciados os identificadores de
  
 \end{lstlisting}}
 
-\vspace*{50px}
-{\textbf{Caso de uso 2:} Adaptação e construção de imagens acessíveis. 
-\item As imagens que possuem algum tipo de conteúdo devem ser acessíveis, elas precisam de alguma descrição, seja ela visível ou não. Existe o atributo \lstinline{alt} para a \textit{tag} \lstinline{img}, onde ele serve para descrever o que está presente na imagem. Essa descrição do \lstinline{alt} não aparece visualmente, mas ela é lida pelo leitor de tela, quando o usuário, navegando pelo teclado, passar pela imagem.}
-{\begin{lstlisting}[language=html,caption=usando atributo alt]
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 2}: Adaptação e construção de imagens acessíveis.} 
+As imagens que possuem algum tipo de conteúdo devem ser acessíveis, elas precisam de alguma descrição, seja ela visível ou não. Existe o atributo \lstinline{alt} para a \textit{tag} \lstinline{img}, onde ele serve para descrever o que está presente na imagem. Essa descrição do \lstinline{alt} não aparece visualmente, mas ela é lida pelo leitor de tela, quando o usuário, navegando pelo teclado, passar pela imagem.}
+{\begin{lstlisting}[language=html,caption=usando atributo \lstinline{alt}]
 <img src="headphone.jpg" alt="Headphone na cor preto"> 
 \end{lstlisting}}
-\item Caso haja necessidade de fornecer uma informação contextualizada é necessário fazer uso do atributo \lstinline{title}. Nesse caso, a maioria dos leitores de tela lerá o texto alternativo, o atributo de título e o nome do arquivo. Além disso, os navegadores exibem o texto do título como dicas de ferramentas quando estão sobre o mouse. Com a chegada do \textit{HTML 5} \cite{HTML} surgiram dois novos elementos o \lstinline{<figure>} e \lstinline{figcaption>}, que devem associar uma figura a uma legenda. 
+\item Caso haja necessidade de fornecer uma informação contextualizada é necessário fazer uso do atributo \lstinline{title}. Nesse caso, a maioria dos leitores de tela lerá o texto alternativo, o atributo de título e o nome do arquivo. Além disso, os navegadores exibem o texto do título como dicas de ferramentas quando estão sobre o \textit{mouse}. Com a chegada do \textit{HTML 5} \cite{HTML} surgiram dois novos elementos o \lstinline{<figure>} e \lstinline{figcaption>}, que devem associar uma figura a uma legenda. 
 {\begin{lstlisting}[language=html,caption=usando atributo alt]
 <figure>
   <img src="headphone.jpg" alt="Headphone na cor preto"> 
@@ -236,13 +246,13 @@ div {
 }
 </style>
 \end{lstlisting}}
-\item Em casos de imagens que usam a \textit{tag} \lstinline{img} basta ter uma descrição \lstinline{alt} vazia. Isso é para fazer com que os leitores de tela reconheçam a imagem, mas não tentem descrever a imagem. A razão para usar um \lstinline{alt} vazio ao invés de não incluí-lo é porque muitos leitores de tela anunciam o URL da imagem inteira se nenhum \lstinline{alt} for fornecido.
-{\begin{lstlisting}[language=html,caption=usando atributo alt vazio]
+\item Em casos de imagens que usam a \textit{tag} \lstinline{img} basta ter uma descrição \lstinline{alt} vazia. Isso faz com que os leitores de tela reconheçam a imagem mas não tentem descreve-la. A razão para usar um \lstinline{alt} vazio ao invés de não incluí-lo é porque muitos leitores de tela anunciam o URL da imagem inteira se nenhum \lstinline{alt} for fornecido.
+{\begin{lstlisting}[language=html,caption=usando atributo \lstinline{alt} vazio]
 <img src="logotipo.jpg" alt=""> 
 \end{lstlisting}}
 
-\item Em casos de imagens incluídas em tags que não são \lstinline{img} podemos fazer uso o atributo \textit{ARIA role} \lstinline{(role="presentation")}, isso também impede que os leitores de telas leiam textos alternativos.
-{\begin{lstlisting}[language=html,caption=usando atributo rele="presentation"]
+\item Em casos de imagens incluídas em tags que não são \lstinline{img} podemos fazer uso o atributo \textit{ARIA role} \cite{WAI-ARIA} \lstinline{(role="presentation")}, isso também impede que os leitores de telas leiam textos alternativos.
+{\begin{lstlisting}[language=html,caption=usando atributo role="presentation"]
 <div role="presentation" src="logotipo.jpg" alt="" />
 \end{lstlisting}}
 \end{itemize}
@@ -252,11 +262,14 @@ div {
 \end{itemize}}
 
 {
-\textbf{Caso de uso 3:} Criando formulários acessíveis.
+
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 3:} Criando formulários acessíveis.} }
+
 
 \begin{itemize}
-    \item O primeiro passo para criar um formulário acessível é criar uma estrutura \textit{HTML} \cite{HTML} com sequência lógica, essa sequencia é definida pela ordem que se encontra o \textit{HTML}. Fazendo isso a navegação pelos campos do formulário ficará mais fácil tanto por teclado quanto para leitores de tela. 
-    \item A associação de um campo de entrada a um rótulo fará diferença para o usuário final. E quando não for possível fazer essa associação por tags \textit{HTML} existe outras opções como a forma \textit{WAI-ARIA} \cite{WAI-ARIA} usando o atributo \lstinline{aria-label}.
+    \item O primeiro passo para criar um formulário acessível é criar uma estrutura \textit{HTML} \cite{HTML} com sequência lógica, essa sequencia é definida pela ordem que se encontra o \textit{HTML} \cite{HTML}. Fazendo isso a navegação pelos campos do formulário ficará mais fácil tanto por teclado quanto para leitores de tela. 
+    \item A associação de um campo de entrada a um rótulo fará diferença para o usuário final. E quando não for possível fazer essa associação por tags \textit{HTML} \cite{HTML} existe outras opções como a forma \textit{WAI-ARIA} \cite{WAI-ARIA} usando o atributo \lstinline{aria-label}.
     \item É necessário o fornecimento de instruções claras sobre os dados de entradas pedidos no campo. As entradas devem ser facilitadas, retire caracteres especiais em campos numéricos e etc. 
     \begin{itemize}
         \item Para campos com obrigatoriedade de dados, deve-se ter um indicador visual e escrito de obrigatoriedade. O atributo \lstinline{required} auxilia no quesito de obrigatoriedade de um campo.
@@ -316,7 +329,9 @@ div {
 
 
 
-{\textbf{Caso de uso 1:} Navegação por cabeçalhos.
+{
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 1:} Navegação por cabeçalho.}}.
 
 Cabeçalhos compõem a hierarquia de informação do site, essa hierarquia é usada pelos leitores de tela para navegação dentro da página. A grande maioria dos leitores de tela dispõem de atalhos para acesso rápido aos cabeçalhos marcados na página. Para garantir que tecnologias assistivas acessem o conteúdo dos cabeçalho sem sua ordem de importância é preciso tomar alguns cuidados: 
 \begin{itemize}
@@ -330,19 +345,18 @@ Cabeçalhos compõem a hierarquia de informação do site, essa hierarquia é us
 <p>Mais texto de um parágrafo.</p>
 \end{lstlisting}}
 
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 2:}  Navegação por tabulação e leitores de tela}}
+{
+{
+A ordem da navegação por tabulação é derivada da forma como o \textit{layout} do \textit{site} está escrito, contudo a ordem padrão pode não corresponder necessariamente a ordem visual. Ao utilizar a tecla \textit{tab}, o leitor de tela realiza o foco e lê em voz alta os \textit{links} e componentes interativos presentes na página.  A tabulação é utilizada somente para navegar entre os \textit{links}, e com isso todos os \textit{links} terão que ser localizados através destas duas formas, com a tabulação ou com as setas. O que diferencia uma forma da outra, é que com as setas, o usuário poderá ler toda a página (incluindo texto entre os \textit{links}), e com a tabulação, o usuário só pode localizar os \textit{links}, botões, campos de edição, e caixas de seleção.
 
-{\textbf{Caso de uso 2:} Navegação por tabulação e leitores de tela.
 
-A ordem da navegação por tabulação é derivada da forma como o \textit{layout} do \textit{site} está escrito, contudo a ordem padrão pode não corresponder necessariamente a ordem visual. Ao utilizar a tecla \textit{tab}, o leitor de tela realiza o foco e lê em voz alta os links e componentes interativos presentes na página.  A tabulação é utilizada somente para navegar entre os links, e com isso todos os links terão que ser localizados através destas duas formas, com a tabulação ou com as setas. O que diferencia uma forma da outra, é que com as setas, o usuário poderá ler toda a página (incluindo texto entre os links), e com a tabulação, o usuário só pode localizar os links, botões, campos de edição, e caixas de seleção.
-
-
-Navegar por entre os links é uma forma de observar o texto rapidamente, especialmente se os usuários estiverem tentando encontrar uma seção específica do \textit{website}. Para ter uma navegação por tabulação eficiente é preciso passar por alguns pontos: 
+Navegar por entre os \textit{links} é uma forma de observar o texto rapidamente, especialmente se os usuários estiverem tentando encontrar uma seção específica do \textit{website}. Para ter uma navegação por tabulação eficiente é preciso passar por alguns pontos: 
 \begin{enumerate}
     \item Ordene de forma lógica e intuitiva a leitura e tabulação. Preparar o \textit{HTML}\cite{HTML} para ter uma navegação consistente e eficaz é essencial para o bom funcionamento da navegação atrelada a leitores de tela. 
     \item Usar a tecla \textit{tab} para passar pelos links e controles de formulários
-    das páginas, certificando-se de que todos os links e controles de
-    formulários podem ser acessados, bem como se os links indicam
-    claramente para onde levam. 
+    das páginas, certificando-se de que todos os links e controles de formulários podem ser acessados, bem como se os links indicam claramente para onde levam. 
     \begin{itemize}
         \item Com atributo \lstinline{tabindex} é possível definir uma ordem de foco nos elementos dispostos na tela. Usando o \lstinline{tabindex=0} é inserido um elemento na ordem natural de tabulação e com \lstinline{tabindex="-1"} um elemento é removido da ordem e tabulação.
 
@@ -355,12 +369,12 @@ Próximo item na lista de tabulação, mesmo não sendo um elemento que receberi
 </div>
 <div>Não será focado pois está sem o tabindex</div>
 \end{lstlisting}}
-        \item Adicione o atributo \lstinline{title} aos links, ele mostrará uma descrição do lugar pra onde o link leva, melhorando a navegação.
+        \item Adicione o atributo \lstinline{title} aos \textit{links}, ele mostrará uma descrição do lugar pra onde o \textit{link} leva, melhorando a navegação.
 {\begin{lstlisting}[language=html,caption=usando o atributo title]
 <a href="#" onclick="abrePopup()" onkeypress="abrePopup()" title="Abre uma janela pop-up com Javascript">Ver mais informações</a>
 \end{lstlisting}}
     \end{itemize}
-    \item Forneça âncoras para ir direto a um bloco de conteúdo. São comumente chamados de \textit{landmarks} é um tipo de região em uma página web a qual uma pessoa pode querer acessá-la rapidamente. Um dos principais benefícios em se usar pontos de referência é a possibilidade de o usuário acessar diretamente uma região da página sem a necessidade de seguir a ordem natural do conteúdo. Isso é especialmente relevante para o caso de pessoas que utilizam leitores de tela para navegar na \textit{Web}. Para essa abordagem é muito utilizado o CSS \cite{CSS} deixando-os links invisíveis e apenas disponíveis quando a navegação por tabulação se iniciar. 
+    \item Forneça âncoras para ir direto a um bloco de conteúdo. São comumente chamados de \textit{landmarks} é um tipo de região em uma página \textit{web} a qual uma pessoa pode querer acessá-la rapidamente. Um dos principais benefícios em se usar pontos de referência é a possibilidade de o usuário acessar diretamente uma região da página sem a necessidade de seguir a ordem natural do conteúdo. Isso é especialmente relevante para o caso de pessoas que utilizam leitores de tela para navegar na \textit{web}. Para essa abordagem é muito utilizado o CSS \cite{CSS} deixando-os \textit{links} invisíveis e apenas disponíveis quando a navegação por tabulação se iniciar. 
 {\begin{lstlisting}[language=html,caption=usando landmarks]
 <div role="heading" id="cabecalho"> 
   <h1>O Cabeçalho</h1> 
@@ -369,26 +383,27 @@ Próximo item na lista de tabulação, mesmo não sendo um elemento que receberi
 <div role="navigation" id="navegacao"> conteúdo da navegação </div>
 <div role="main" id="conteudo"> conteúdo da main </mdiv>
 \end{lstlisting}}
-    \item Não utilize tabelas para diagramação. As tabelas devem ser utilizadas apenas para dados tabulares e não para efeitos de disposição dos elementos na página. O leitor de telas sairá pulando por cada campo das tabelas e o usuário poderá ficar perdido na navegação. Para efeitos de diagramação faça uso de \textit{CSS} \cite{CSS}.
-    \item Separe os links adjacentes. Em uma sequência de links, além do espaço, é importante o uso de separadores ou elementos do HTML \cite{HTML} adequados para que as pessoas com deficiência identifiquem claramente onde termina e começa um novo link. É recomendado o uso de listas , em que cada elemento dentro da lista é um link.
-{\begin{lstlisting}[language=html,caption=separando links adjacentes]
+    \item É aconselhável não tabelas para diagramação. As tabelas devem ser utilizadas apenas para dados tabulares e não para efeitos de disposição dos elementos na página. O leitor de telas sairá pulando por cada campo das tabelas e o usuário poderá ficar perdido na navegação. Para efeitos de diagramação a melhor opção está na utilização do \textit{CSS} \cite{CSS}.
+    \item Utilização de separação dos \textit{links} adjacentes. Em uma sequência de \textit{links}, além do espaço, é importante o uso de separadores ou elementos do HTML \cite{HTML} adequados para que as pessoas com deficiência identifiquem claramente onde termina e começa um novo \textit{link}. É recomendado o uso de listas , em que cada elemento dentro da lista é um link.
+{\begin{lstlisting}[language=html,caption=separando \textit{links} adjacentes]
 <ul id="menu">
     <li> <a href="home.html">Home</a></li>
     <li> <a href="pesquisa.html">Pesquisa</a></li>
 </ul>
 \end{lstlisting}}
-    \item Não abrir novas instâncias sem a solicitação do usuário. Não use o redirecionamento automático de páginas. Forçar a abertura de links em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso implemente essa funcionalidade, o link deve possuir uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no CSS \cite{CSS}. No CSS o conteúdo de pseudo-elementos é lido em voz alta por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
-    \item Garanta que o conteúdo possua o foco por mouse ou teclado. Esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. A pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML \cite{HTML} que receber o foco do teclado, como links e elementos de formulário.
+    \item É desencorajado a abertura novas instâncias sem a solicitação do usuário. O impedimento de  redirecionamento automático de páginas é algo necessário. Forçar a abertura de \textit{links} em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso haja implementação dessa funcionalidade, a utilização de \textit{link} é atrelada a ter uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no CSS \cite{CSS}. No CSS \cite{CSS} o conteúdo de pseudo-elementos é lido em voz alta por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
+    \item O conteúdo deve possuir o foco por mouse ou teclado e esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. A pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML \cite{HTML} que receber o foco do teclado, como \textit{links} e elementos de formulário.
 {\begin{lstlisting}[language=html,caption=usando o foco visível]
 a:focus, a:hover {
     border: 2px solid #F00;
 }
 \end{lstlisting}}
-    \item Garanta que todas as funcionalidades que estão disponíveis via mouse também estarão disponíveis para serem acionadas via teclado. Só dessa forma o site estará totalmente acessível para pessoas com deficiências. 
+    \item Todas as funcionalidades que estão disponíveis via mouse deverão estar disponíveis para serem acionadas via teclado. Só dessa forma o site estará totalmente acessível para pessoas com deficiências visuais. 
 \end{enumerate}
 }
 }
 }
+
 
 \subsection{Fase 3: Construção do dashboard acessível}
 {Para a construção do \textit{dashboad} com gráficos foi utilizado a biblioteca D3.js \cite{D3} que é usada para visualização de informação. Essa biblioteca permite que seja construído aplicações em que os dados entram puros e são dinamicamente associados em representações gráficas. Com o D3 o DOM \cite{DOM} (Document Object Model)  pode ser facilmente manipulado já que ele usa usa os padrões da web como HTML \cite{HTML}, CSS \cite{CSS}, SVG para renderizar gráficos de visualização poderosos.
@@ -400,25 +415,25 @@ a:focus, a:hover {
 \end{figure} 
 
 }
-\vspace*{50px}
-{\textbf{Construção de gráficos com D3.js:}
 
-No \textit{e-commerce} foi decidido não construir o gráfico inteiramente com D3.js, pois a abordagem normal presente não facilitaria o reaproveitamento para a criação dos componentes. Quando um gráfico é plotado somente com D3.js pode haver problemas de performance, visto que o React não estava preparado para esse tipo de renderização contínua criada ao se aplicar filtros e interações nos gráficos. Dessa forma, a abordagem mais coerente era usar as tags HTML normais e quando era necessário feito a criação do elementos e interações usando o D3.js.
+\vspace{1cm}
+{\centerline{\textbf{Construção de gráficos com D3.js}}}
+No \textit{e-commerce} foi decidido não construir o gráfico inteiramente com D3.js \cite{D3}, pois a abordagem normal presente não facilitaria o reaproveitamento para a criação dos componentes. Quando um gráfico é plotado somente com D3.js \cite{D3} pode haver problemas de performance, visto que o React \cite{REACT} não estava preparado para esse tipo de renderização contínua criada ao se aplicar filtros e interações nos gráficos. Dessa forma, a abordagem mais coerente era usar as \textit{tags} HTML \cite{HTML} normais e quando era necessário feito a criação do elementos e interações usando o D3.js \cite{D3}.
 
-Para manipularmos o DOM (Document Object Model), precisamos aprender a utilizar os recursos presente no D3. O D3 usa JavaScript para realizar a maioria das tarefas de seleção, transição e vinculação de dados.
+Para a manipulação do DOM (Document Object Model) \cite{DOM}, é necessário aprender a utilizar os recursos presente no D3 \cite{D3}. A biblioteca usa JavaScript para realizar a maioria das tarefas de seleção, transição e vinculação de dados.
 
-A primeira coisa necessária para construir um gráfico com D3.js é adicionar a biblioteca ao projeto, seja por gerenciador de pacotes ou por importação direta na tag \lstinline{script}. Feito isso, é preciso ter uma tag como base onde as partes do gráfico serão injetadas, geralmente é usada a tag \lstinline{svg} pois ela auxilia na construção de formas geométricas que será utilizado no gráfico. Após adicionar a tag svg precisamos adicionar uma nova tag \lstinline{g} para que o gráfico comece a tomar forma, essa tag \lstinline{g} é um recipiente utilizado para agrupar objetos.
+A primeira coisa necessária para construir um gráfico com D3.js \cite{D3} é adicionar a biblioteca ao projeto, seja por gerenciador de pacotes ou por importação direta na \textit{tag} \lstinline{script}. Feito isso, é preciso ter uma \textit{tag} como base onde as partes do gráfico serão injetadas, geralmente é usada a \textit{tag} \lstinline{svg} pois ela auxilia na construção de formas geométricas que será utilizado no gráfico. Após adicionar a \textit{tag} \lstinline{svg} precisamos adicionar uma nova \textit{tag} \lstinline{g} para que o gráfico comece a tomar forma, essa \textit{tag} \lstinline{g} é um recipiente utilizado para agrupar objetos.
 
-Para começar a desenhar qualquer tipo de gráfico é necessário colocar os eixos das abscissas e ordenadas, para isso que definir quais são os domínios e só assim construir as escalas, para que seja comportado todos os dados dentro dos limites criados pela escala. O próprio D3 já fornece alguns tipos de funções que nos auxiliam na criação dessas escalas, as funções são: \lstinline{d3.scaleBand()}, onde esta função divide o intervalo em n bandas onde n é o número de valores na matriz de domínio e \lstinline{d3.scaleLinear}, que é usada para criar um ponto de escala visual. Será criado duas escalas, uma para o eixo X usando a \lstinline{d3.scaleBand()} e outra para o eixo Y usando a \lstinline{d3.scaleLinear}.
+Para começar a desenhar qualquer tipo de gráfico é necessário colocar os eixos das abscissas e ordenadas. Na construção desses eixos é deve-se estabelecer qual o domínio de cada  eixoe após isso iniciar a construção das escalas, para que assim todos os dados consigam ser comportados dentro dos limites estabelecidos pela escala. O próprio D3 \cite{D3} já fornece alguns tipos de funções que nos auxiliam na criação dessas escalas, as funções são: \lstinline{d3.scaleBand()}, esta função divide o intervalo em n bandas onde n é o número de valores na matriz de domínio e \lstinline{d3.scaleLinear}, que é usada para criar um ponto de escala visual. Será criado duas escalas, uma para o eixo X usando a \lstinline{d3.scaleBand()} e outra para o eixo Y usando a \lstinline{d3.scaleLinear}.
 
 O próximo passo é criar por fim o conteúdo do gráfico de forma visual. Com o apoio de dados vindos de uma API podemos atribuir ao longo do eixo X e do eixo Y os valores e formas visuais necessárias. Utilizando a função \lstinline{attr} será possível definir os atributos do elemento, uma vez que essa função recebe dois parâmetros o nome do atributo e o valor desse atributo. Graças a essa função podemos definir altura, largura e os valores de cada ponto dos eixos.
 
-Depois que todos os valores dos gráficos estiverem corretamente plotados podemos lidar com as interações que estarão no gráfico. Todas as interações presentes via mouse devem também estarem disponíveis via teclado, ou seja, se houver um interação de clique de mouse deve haver uma interação de pressão de tecla. Para auxiliar na construção dessas interações pode-se usar a função \lstinline{.on()} que ficará responsável por agir como um \textit{event listener} de um elemento, onde qualquer tipo de interação será percebida. Essa função recebe dois argumentos, sendo o primeiro o tipo de evento e o segundo uma função que será disparava quando essa evento for ouvido. 
+Depois que todos os valores dos gráficos estiverem corretamente plotados podemos lidar com as interações que estarão no gráfico. Todas as interações presentes via mouse devem também estarem disponíveis via teclado, ou seja, se houver um interação de clique de mouse deve haver uma interação de pressão de tecla. Para auxiliar na construção dessas interações pode-se usar a função \lstinline{.on()} que ficará responsável por agir como um \textit{event listener} de um elemento, onde qualquer tipo de interação será percebida. Essa função recebe dois argumentos, sendo o primeiro o tipo de evento e o segundo uma função que será disparava quando essa evento for detectado. 
 
-\vspace*{50px}
-\textbf{Tornando os gráficos acessíveis a leitores de tela}
 
-{Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso temos algumas abordagens eficientes. 
+\vspace{1cm}
+{\centerline{\textbf{Tornando os gráficos acessíveis a leitores de tela}}}
+{Além de tornar os gráficos acessíveis a qualquer tipo de navegação e interação é preciso que as imagens e os elementos presentes também estejam acessíveis e para isso existem algumas abordagens eficientes.  
 
 O gráfico exemplificado abaixo \ref{fig:grafico-d3} foi construído levando em consideração as barreiras de acessibilidade que um deficiente visual frequentemente se depara. Logo, para diminuir essas barreiras as decisões tiveram como apoio as diretrizes WCAG \ref{sec:apendice} que se adéquam ao proposito do \textit{e-commerce} e a construção do gráfico com D3.js \cite{D3} se deu com o apoio das mesmas. 
 
@@ -426,13 +441,13 @@ O gráfico exemplificado abaixo \ref{fig:grafico-d3} foi construído levando em 
 \begin{figure}[ht]
   	\center
     \includegraphics[width=0.7\textwidth]{images/barchart-tooltip.png}
-    \caption{Gráfico do tipo de barras estacadas com tooltip de visualização.}
+    \caption{Gráfico do tipo de barras estacadas com \textit{tooltip} de visualização.}
     \label{fig:grafico-d3}
 \end{figure} 
 
 }
 
-\newpage
+
 {
 
 {Tomando como exemplo a figura \ref{fig:grafico-d3}, a tabela \ref{Barreiras e decisões na construção de um gráfico acessível} logo abaixo exemplifica cada barreira de acessibilidade e sua respectiva tomada de decisão.}
@@ -447,10 +462,10 @@ O gráfico exemplificado abaixo \ref{fig:grafico-d3} foi construído levando em 
 {\color[HTML]{333333}  Barreira de acessibilidade} &
   Tomada de decisão  \\ 
 \hline
-\begin{tabular}[c]{@{}l@{}}Falta de atributo alt ou atributo não \\ descritivo\end{tabular} &
-  \begin{tabular}[c]{@{}l@{}}Se faz necessário o uso do atributo alt. Os leitores de tela falam texto alternativo sem permitir que os usuários acelerem \\ou pulem,  portanto, as informações sejam descritivas, mas sucintas.\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Falta de atributo \lstinline{alt} ou atributo não \\ descritivo\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Se faz necessário o uso do atributo \lstinline{alt}. Os leitores de tela falam texto alternativo sem permitir que os usuários acelerem \\ou pulem,  portanto, as informações sejam descritivas, mas sucintas.\end{tabular} \\ \hline
 Existência de títulos não objetivos &
-  \begin{tabular}[c]{@{}l@{}}Adicionar um título claro em cada gráfico plotado: A primeira coisa que será lida em um gráfico é o seu título,   isso \\facilitará a experiência dos usuário de leitor  de tela, que ao  perceber que aquele gráfico não é o que  ele precisa \\ ver no momento poderá pular a leitura ou modificar o filtro em questão.\end{tabular} \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Adicionar um título claro em cada gráfico plotado: A primeira coisa que será lida em um gráfico é o título,   isso \\facilitará a experiência dos usuário de leitor  de tela, que ao  perceber que aquele gráfico não é o que  ele precisa \\ ver no momento poderá pular a leitura ou modificar o filtro em questão.\end{tabular} \\ \hline
 Falta de rotulação nos dados &
   \begin{tabular}[c]{@{}l@{}}Legendas podem ser não eficientes para usuários daltônicos ou deficientes visuais que podem ter dificuldade em \\ combinar as cores do gráfico  com as da legenda.  Rotulando também diminuirá o trabalho de varredura para frente \\ e para trás tentando combinar a legenda com os dados. \end{tabular}\\ \hline
 Dados fornecidos apenas por gráficos &
@@ -471,32 +486,31 @@ Dados fornecidos apenas por gráficos &
 
 }
 
-\vspace*{20px}
-\textbf{Gráficos como componentes reutilizáveis}
+\vspace{1cm}
+{\centerline{\textbf{Gráficos como componentes reutilizáveis}}}
 
-{Quando se trabalha com React \cite{REACT} ao se criar um componente devemos garantir que esse componente possa ser reutilizável, para que isso seja possível no momento da criação de cada componente deve-se ter em mente que quando menor e mais genérico for o componente mais ele será escalável e com isso facilitará a construção de componentes maiores.
 
-Para facilitar a construção como módulos separados cada tipo de gráfico se tornou um componente reutilizável. Em cada componente desses contaria com suas funções e particularidades porém com a flexibilidade de ser um componente genérico, onde todos os dados são populados através de propriedades que são repassadas do componente pai para o componente filho. 
+{Quando se trabalha com React \cite{REACT} ao se criar um componente devemos garantir que esse ele possa ser reutilizável, para que isso seja possível no momento da criação de cada componente deve-se ter em mente que quanto menor e mais genérico for o componente mais ele será escalável e com isso facilitará a construção de componentes maiores.
+
+Para facilitar a construção como módulos separados cada tipo de gráfico se tornou um componente reutilizável. Em cada componente desses contaria com suas funções e particularidades, porém com a flexibilidade de ser um componente genérico, onde todos os dados são populados através de propriedades que são repassadas do componente pai para o componente filho. 
 
 
 
 }
 }
-
-
 
 
 \subsection{Fase 4: Testes e avaliações de acessibilidade}
-{Durante e após a construção do e-commerce de acordo com os
-padrões Web e as diretrizes de acessibilidade, é necessário efetuar testes para garantir sua acessibilidade. Esses testes foram executados de dois modos: 
+{Durante e após a construção do e\textit{e-commerce} de acordo com os
+padrões \textit{web} e as diretrizes de acessibilidade, é necessário efetuar testes para garantir sua acessibilidade. Todos os testes descritos nessa seção foram executados por pessoas que não são os \textit{stakeholders} do projeto, porém para cobrir o máximo de casos de testes possível esses testes foram abordados e executados de dois modos: 
 \begin{itemize}
 \item Avaliação automática: São as avaliações feitas de maneira automática por meio de \textit{plugins} de verificação e de \textit{websites} de validação.
 \begin{itemize}
-\item \href{https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=pt-BR}{\textit{Google Accessibility Developer Tools}} ({Plugins} para navegador \textit{Chrome}).
-\item \href{https://developer.chrome.com/docs/devtools/}{\textit{DevTools}}({Plugins} para navegador \textit{Chrome}).
-\item \href{https://contrastchecker.com/}{Contrast Checker} (website - Validação de contraste de cores)
+    \item \href{https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=pt-BR}{\textit{Google Accessibility Developer Tools}} ({Plugins} para navegador \textit{Chrome}).
+    \item \href{https://developer.chrome.com/docs/devtools/}{\textit{DevTools}}({Plugins} para navegador \textit{Chrome}).
+    \item \href{https://contrastchecker.com/}{Contrast Checker} (\textit{website} - Validação de contraste de cores).
 \end{itemize}
-\item Avaliações manuais: Essa etapa foi usando o leitor de tela e a navegação por teclado, onde deve ser checado se todos os comportamentos e ações esperados estão sendo realmente respeitados e executados.
+\item Avaliações manuais: Essa etapa se deu usando o leitor de tela e a navegação por teclado, onde foi checado se todos os comportamentos e ações esperados estão sendo realmente respeitados e executados.
 \end{itemize}
 }
 
@@ -507,8 +521,8 @@ padrões Web e as diretrizes de acessibilidade, é necessário efetuar testes pa
 \item Diretrizes \textit{\href{https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/}{WCAG}: é um conjunto de regras que definem a forma de como tornar o conteúdo da \textit{Web} mais acessível para pessoas com deficiência}.
 \item \textit{Atributos \href{https://www.w3.org/TR/wai-aria-1.2/}{WAI-ARIA}: Especificações técnicas que oferecem maneiras de tornar as aplicações mais acessíveis a uma diversidade maior de pessoas, incluindo quem utiliza tecnologias assistivas, como leitores de telas}.
 \item { \href{https://pt-br.reactjs.org/}{React.js}: É uma biblioteca \textit{JavaScript} para criar interfaces de usuário, ela é declarativa e baseada em componentes}.
-\item {\href{https://sass-lang.com/}{Sass}: Ou \textit{Syntactically Awesome Style Sheets} é uma linguagem de extensão do \textit{CSS} e tem como objetivo tornar o processo de desenvolvimento mais simples e eficiente}.
-\item {\href{https://d3js.org/}{D3.js} : Trata-se de uma biblioteca {JavaScript} para construção de visualizações de dados. \textit{D3} permite que visualizações sejam criadas diretamente em páginas \textit{HTML} através de gráficos vetorizados \lstinline{SVG}}.
+\item {\href{https://sass-lang.com/}{Sass}: Ou \textit{Syntactically Awesome Style Sheets} é uma linguagem de extensão do \textit{\textit{CSS}} e tem como objetivo tornar o processo de desenvolvimento mais simples e eficiente}.
+\item {\href{https://d3js.org/}{D3.js} : Trata-se de uma biblioteca {JavaScript} para construção de visualizações de dados. \textit{D3} permite que visualizações sejam criadas diretamente em páginas \textit{HTML} \cite{HTML} através de gráficos vetorizados \lstinline{SVG}}.
 \item Tecnologias assistivas:
 \begin{itemize}
 \item \href{https://www.apple.com/br/accessibility/vision/}{VoiceOver}
@@ -517,9 +531,13 @@ padrões Web e as diretrizes de acessibilidade, é necessário efetuar testes pa
 \end{itemize}
 \end{itemize}
  }
+ 
+ 
 \subsection{Contribuição}
-{⁠A solução ainda não se encontra em ambiente de produção, pois está passando por um processo de alinhamento sobre outros pontos que o cliente deseja modificar dentro do sistema. Entretanto, todo esse épico de acessibilidade e DataViz já foi aprovado e muito bem avaliado pelo cliente que se mostrou muito feliz com o que foi apresentado.
+{
 
-O projeto, o guia construído e o conhecimento adquirido para a construção da solução se tornou um case para outros desenvolvedores e designers que buscam aprender mais sobre a acessibilidade e aplicá-la de um modo descomplicado e correto, sendo apresentado como case em reuniões de troca de conhecimentos entre pessoas desenvolvedoras e designers. 
+ A Atuação da autora desse estudo consistiu na construir soluções de interface que melhorem a experiência do usuário e convertimento de tais soluções em softwares. Para criar esses softwares aplicando essas soluções foram utilizadas tecnologias de front-end. Portanto, a autora esteve presente desde a fase de ideação de \textit{design} até o desenvolvimento do \textit{e-commerce} fazendo o uso de JavaScript e da biblioteca React \cite{REACT} para a construção do mesmo. A solução apresentada não se encontra em ambiente de produção. Entretanto, todo esse épico de acessibilidade e \textit{Data Visualization} foi muito bem avaliado pelo cliente que se mostrou muito feliz com o que foi apresentado e aprovou todo o progresso feito.
+
+O projeto, o guia construído, o \textit{style guide} \cite{STYLE} e o conhecimento adquirido para a construção da solução se tornou um case para outros desenvolvedores e designers que buscam aprender mais sobre a acessibilidade e aplicá-la de um modo descomplicado e correto, sendo apresentado como case em reuniões de troca de conhecimentos entre pessoas desenvolvedoras e designers.  
 
 }
