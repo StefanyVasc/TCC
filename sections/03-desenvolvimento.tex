@@ -54,7 +54,7 @@ Dentre todas as diretrizes WCAG \cite{WCAG21} que existem foram escolhidas algum
 Quando falamos em cores é preciso ter em mente duas coisas: contraste e luminosidade. Existe algumas deficiências e limitações visuais que fazem com que a cor sofra mudanças então é preciso que o \textit{e-commerce} tenha uma paleta de cores acessível que garanta o contraste ideal entre as cores \ref{Diretrizes nível AA}. No exemplo abaixo da figura \ref{fig1:style} está sendo demonstrado uma paleta de cores inclusiva criada pela ferramenta \textit{Adobe Color Wheel} \cite{ADOBE} . 
 \begin{figure}[ht]
   		\centering
-        \includegraphics[width=1.0\textwidth]{images/paleta_de_cores_acessiveis.png}
+        \includegraphics[width=0.8\textwidth]{images/paleta_de_cores_acessiveis.png}
         \caption{A imagem exemplifica uma paleta de cores onde todas as cores são acessíveis. Para a construção dessa paleta de cores foi utilizado o site do \textit{Adobe Color} \cite{ADOBE}.}
         \label{fig1:style}
 \end{figure}  
@@ -62,7 +62,7 @@ Quando falamos em cores é preciso ter em mente duas coisas: contraste e luminos
 É de extrema importância verificar como ficaria essas cores pela visão de pessoas que possuem algum tipo de daltonismo. Ao perceber que a paleta de cores ainda está com um contraste aceitável e de no mínimo 7:1 ela está pronta para o uso, seguindo a diretriz nível AAA de contraste \ref{Diretrizes nível AAA}. Na figura \ref{fig2:style} é possível observar os diferentes tipos de daltonismo e como a paleta de cores se comporta diante das limitações de visão de pessoas com daltonismo. Essa paleta foi criada utilizando as ferramentas de acessibilidade do \textit{Adobe Color Wheel} \cite{ADOBE}.
  \begin{figure}[ht]
         \centering
-    	\includegraphics[width=1.0\textwidth]{images/paleta_daltonismo.png}
+    	\includegraphics[width=0.8\textwidth]{images/paleta_daltonismo.png}
         \caption{A imagem simula o comportamento de uma paleta de cores acessível diante dos tipos de daltonismo.}
         \label{fig2:style}
 \end{figure}  
@@ -95,7 +95,7 @@ A figura \ref{fig3:tipografia} foi criada usando os recursos de acessibilidade p
 
 \begin{figure}[ht]
     \centering
-	\includegraphics[width=1.0\textwidth]{images/contrast_check.png}
+	\includegraphics[width=0.8\textwidth]{images/contrast_check.png}
     \caption{A figura exemplifica a checagem de contraste entre texto e fundo realizado por meio do site  \textit{Adobe Color Wheel} \cite{ADOBE}}
     \label{fig3:tipografia}
 \end{figure} 
@@ -106,11 +106,11 @@ Este tópico compreende os elementos que estarão presentes na \textit{interface
 
 Com o componente \textit{Card} da figura \ref{fig:UI_componentes} abaixo podemos analisar onde as diretrizes foram aplicadas e como elas impactam na construção de componentes mais complexos da \textit{interface} do usuário.  
 
-\begin{figure}[ht]
-        \centering
-    	\includegraphics[width=0.38\textwidth]{images/ui-exemplo.png}
-        \caption{Exemplo de um componente montado com elementos da interface do usuário}
-        \label{fig:UI_componentes}
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.38\textwidth]{images/ui-exemplo.png}
+    \caption{Exemplo de um componente montado com elementos da interface do usuário}
+    \label{fig:UI_componentes}
 \end{figure}
 
 Abaixo na tabela \ref{elementos de UI} foi referenciado os identificadores de 1 a 8 apontados na Figura \ref{fig:UI_componentes} com as diretrizes aplicadas em cada ponto juntamente com sua breve descrição. Foi especificado o nível em que cada diretriz se encontra. Para maiores detalhes sobre as diretrizes consultar o apêndice \ref{sec:apendice}.
@@ -119,7 +119,7 @@ Abaixo na tabela \ref{elementos de UI} foi referenciado os identificadores de 1 
 
 \noindent\begin{minipage}{\linewidth}
 \centering
-\captionof{table}{Elementos de UI}\resizebox{\linewidth}{!}{%
+\captionof{table}{Tabela lista os identificadores de 1 a 8 e as diretrizes contempladas}\resizebox{\linewidth}{!}{%
 \begin{tabular}{|c|l|l|c|p{400px}|} 
 \hline
 \rowcolor[HTML]{ECF4FF} 
@@ -198,17 +198,18 @@ Abaixo na tabela \ref{elementos de UI} foi referenciado os identificadores de 1 
 
 \vspace{1.5cm}
 {\centerline{\textbf{Caso de uso 1}: Transformando botão inacessível em acessível} 
-Adaptação de um botão que foi construído de forma não acessível e por isso não era lido por leitores de tela e nem navegável via teclado. Nesse exemplo, foi usado o atributo \lstinline{role} do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
+Adaptação de um botão que foi construído de forma não acessível, como exemplificado no código \ref{code1:bad},  e por isso não era lido por leitores de tela e nem navegável via teclado. No exemplo do código \ref{code2:good} foi usado alternativas para deixar o botão acessível, foi adicionado o atributo \lstinline{role} do \textit{WAI-ARIA}\cite{WAI-ARIA} para dar o comportamento de botão a essa \lstinline{div} e com isso ganhar todos os atributos e comportamentos que um botão teria.
 
-\begin{lstlisting}[language=html, caption=Componente de botão antes de receber boas praticas e acessibilidade]
+\begin{lstlisting}[language=html,caption={Componente de botão antes de receber boas praticas e acessibilidade.},  label=code1:bad]
     <div
         className="button__add"
         onClick={event => onClick(event)}
     >
       Adicionar ao carrinho 
     </div>
+
 \end{lstlisting}}
-{\begin{lstlisting}[language=html,caption=Adaptação do componente de botão usando \textit{WAI-ARIA} \cite{WAI-ARIA}]
+{\begin{lstlisting}[language=html,caption={Adaptação do componente de botão usando o atributo \textit{role} presente no \textit{WAI-ARIA} \cite{WAI-ARIA}.}, label=code2:good]
 <div 
     role="button" 
     tabIndex="0" 
@@ -224,12 +225,12 @@ Adaptação de um botão que foi construído de forma não acessível e por isso
 
 \vspace{1.5cm}
 {\centerline{\textbf{Caso de uso 2}: Adaptação e construção de imagens acessíveis.} 
-As imagens que possuem algum tipo de conteúdo devem ser acessíveis, elas precisam de alguma descrição, seja ela visível ou não. Existe o atributo \lstinline{alt} para a \textit{tag} \lstinline{img}, onde ele serve para descrever o que está presente na imagem. Essa descrição do \lstinline{alt} não aparece visualmente, mas ela é lida pelo leitor de tela, quando o usuário, navegando pelo teclado, passar pela imagem.}
-{\begin{lstlisting}[language=html,caption=usando atributo \lstinline{alt}]
+As imagens que possuem algum tipo de conteúdo devem ser acessíveis, elas precisam de alguma descrição, seja ela visível ou não. Existe o atributo \lstinline{alt} para a \textit{tag} \lstinline{img}, como exemplificado no código \ref{code3:good}, onde ele serve para descrever o que está presente na imagem. Essa descrição do \lstinline{alt} não aparece visualmente, mas ela é lida pelo leitor de tela, quando o usuário, navegando pelo teclado, passar pela imagem.}
+{\begin{lstlisting}[language=html,caption={Uso atributo \lstinline{alt} para descrever o item da imagem.}, label=code3:good]
 <img src="headphone.jpg" alt="Headphone na cor preto"> 
 \end{lstlisting}}
-\item Caso haja necessidade de fornecer uma informação contextualizada é necessário fazer uso do atributo \lstinline{title}. Nesse caso, a maioria dos leitores de tela lerá o texto alternativo, o atributo de título e o nome do arquivo. Além disso, os navegadores exibem o texto do título como dicas de ferramentas quando estão sobre o \textit{mouse}. Com a chegada do \textit{HTML 5} \cite{HTML} surgiram dois novos elementos o \lstinline{<figure>} e \lstinline{figcaption>}, que devem associar uma figura a uma legenda. 
-{\begin{lstlisting}[language=html,caption=usando atributo alt]
+\item Caso haja necessidade de fornecer uma informação contextualizada é necessário fazer uso do atributo \lstinline{title}. Nesse caso, a maioria dos leitores de tela lerá o texto alternativo, o atributo de título e o nome do arquivo. Além disso, os navegadores exibem o texto do título como dicas de ferramentas quando estão sobre o \textit{mouse}. No exemplo do código \ref{code4:good} foi aplicado duas \textit{tags} semânticas presentes no \textit{HTML 5} \cite{HTML}, esses doi elementos o \lstinline{<figure>} e \lstinline{figcaption>}, servem para associar uma figura a uma legenda. 
+{\begin{lstlisting}[language=html,caption={Uso do atributo \textit{alt} em conjunto com as \textit{tags} \textit{figure} e \textit{figurecaption}.}, label=code4:good]
 <figure>
   <img src="headphone.jpg" alt="Headphone na cor preto"> 
   <figcaption>Headphone com microfone acoplado na cor preta, com um fio de ótima construção</figcaption>
@@ -238,21 +239,21 @@ As imagens que possuem algum tipo de conteúdo devem ser acessíveis, elas preci
 
 \item  Ainda temos os casos onde as imagens são apenas decorativas e como elas não carregam conteúdo elas devem ser ignoradas pelos recursos de tecnologia assistivas. Para esse caso nós temos três tipos de abordagens: 
 \begin{itemize}
-\item Por ser decorativa a melhor abordagem é incluí-las na página como imagens de fundo através de \textit{CSS} \cite{CSS} E caso a imagem transmita significado ao conteúdo, mas tenha sido inserida via \textit{CSS} \cite{CSS}, pode-se utilizar recursos \textit{WAI-ARIA}\cite{WAI-ARIA}.
-{\begin{lstlisting}[language=html,caption=adicionando imagem via CSS]
+\item Por ser decorativa a melhor abordagem é incluí-las na página como imagens de fundo através de \textit{CSS} \cite{CSS}, como exemplificado no código \ref{code5:good} e caso a imagem transmita significado ao conteúdo, mas tenha sido inserida via \textit{CSS} \cite{CSS}, pode-se utilizar recursos \textit{WAI-ARIA}\cite{WAI-ARIA}, exemplificado no código \ref{code7:good} .
+{\begin{lstlisting}[language=html,caption={Adição de imagens via CSS.}, label=code5:good]
 <style>
 div {
-    background-image:url("./images/headphone-preto.png");
+    background-image:url("./images/logotipo.png");
 }
 </style>
 \end{lstlisting}}
-\item Em casos de imagens que usam a \textit{tag} \lstinline{img} basta ter uma descrição \lstinline{alt} vazia. Isso faz com que os leitores de tela reconheçam a imagem mas não tentem descreve-la. A razão para usar um \lstinline{alt} vazio ao invés de não incluí-lo é porque muitos leitores de tela anunciam o URL da imagem inteira se nenhum \lstinline{alt} for fornecido.
-{\begin{lstlisting}[language=html,caption=usando atributo \lstinline{alt} vazio]
+\item Em casos de imagens que usam a \textit{tag} \lstinline{img} basta ter uma descrição \lstinline{alt} vazia. Isso faz com que os leitores de tela reconheçam a imagem mas não tentem descreve-la, como exemplificado no código \ref{code6:good} abaixo. A razão para usar um \lstinline{alt} vazio ao invés de não incluí-lo é porque muitos leitores de tela anunciam o URL da imagem inteira se nenhum \lstinline{alt} for fornecido.
+{\begin{lstlisting}[language=html,caption={Uso do atributo \lstinline{alt} vazio.}, label=code6:good]
 <img src="logotipo.jpg" alt=""> 
 \end{lstlisting}}
 
-\item Em casos de imagens incluídas em tags que não são \lstinline{img} podemos fazer uso o atributo \textit{ARIA role} \cite{WAI-ARIA} \lstinline{(role="presentation")}, isso também impede que os leitores de telas leiam textos alternativos.
-{\begin{lstlisting}[language=html,caption=usando atributo role="presentation"]
+\item Como exemplificado no código \ref{code7:good} em casos de imagens incluídas em \textit{tags} que não são \lstinline{img} aconselha-se fazer uso o atributo \textit{ARIA role} \cite{WAI-ARIA} \lstinline{(role="presentation")}, isso também impede que os leitores de telas leiam textos alternativos. 
+{\begin{lstlisting}[language=html,caption={Uso atributo WAI-ARIA \cite{WAI-ARIA} role="presentation".}, label=code7:good]
 <div role="presentation" src="logotipo.jpg" alt="" />
 \end{lstlisting}}
 \end{itemize}
@@ -267,7 +268,7 @@ div {
 {\centerline{\textbf{Caso de uso 3:} Criando formulários acessíveis.} }
 
 
-\begin{itemize}
+\begin{enumerate}
     \item O primeiro passo para criar um formulário acessível é criar uma estrutura \textit{HTML} \cite{HTML} com sequência lógica, essa sequencia é definida pela ordem que se encontra o \textit{HTML} \cite{HTML}. Fazendo isso a navegação pelos campos do formulário ficará mais fácil tanto por teclado quanto para leitores de tela. 
     \item A associação de um campo de entrada a um rótulo fará diferença para o usuário final. E quando não for possível fazer essa associação por tags \textit{HTML} \cite{HTML} existe outras opções como a forma \textit{WAI-ARIA} \cite{WAI-ARIA} usando o atributo \lstinline{aria-label}.
     \item É necessário o fornecimento de instruções claras sobre os dados de entradas pedidos no campo. As entradas devem ser facilitadas, retire caracteres especiais em campos numéricos e etc. 
@@ -282,42 +283,47 @@ div {
     \end{itemize}
     \item É necessário haver distinção visual de qual campo está recebendo o foco no momento, mesmo aplicando o \lstinline{outline} padrão do navegador. A customização desse \lstinline{outline} pode ser feita para que ele sempre fique visível qual campo contém o foco.
     
-    {\begin{lstlisting}[language=html, caption=Formulário acessível]
-    <form>
-        <output id="formMessage" role="alert" aria-live="assertive" tabindex="0" class="error">
-            O formulário apresenta erros que impedem a finalização do seu cadastro. Confira se todos os campos obrigatórios foram preenchidos e tente novamente.
-        </output>
+   
+\end{enumerate}
 
-        <p>
-            <label for="email1">
-                E-mail <span class="required">(obrigatório)</span>:
-            </label>
-            <input type="email1" name="email1" id="email1" required="" aria-invalid="true" aria-describedby="emailMessage">
-            <span class="fieldMessage" id="emailMessage">
-                O e-mail não pode ficar em branco e deve ser válido.
-            </span>
-          </p>
-  
-          <p>
-            <label for="phone1">
-                Telefone <span class="optional">(opcional)</span>:
-            </label>
-            <input type="tel" name="phone1" id="phone1" aria-describedby="phoneTip">
-            <span class="fieldTip" id="phoneTip">
-                Formato: (99) 99999-9999.
-            </span>
-          </p>
-
-        <button class="formButton" id="formButtonARIA" type="submit">Finalizar cadastro</button>
-    </form>
-    \end{lstlisting}}
+ O código construído no exemplo \ref{code8:good} é possível observar todas as enumerações da lista acima desde a construção do HTML \cite{HTML} ordenado, passando por associação de rótulos a campos e instruções sobre o tipo de entrada que é esperado como também o \textit{feedback} conciso para eventuais indicações de erros. Como resultado do código \ref{code8:good} após a compilação do código desenvolvido temos a imagem \ref{fig5:code8} que apresenta de forma visual todas as enumerações desenvolvidas no código.
     
-    \begin{figure}[ht]
-  		\center
-        \includegraphics[width=0.7\textwidth]{images/form-acessivel.png}
-        \caption{Formulário criado usando as técnicas listadas acima}
-    \end{figure} 
-\end{itemize}
+{\begin{lstlisting}[language=html, caption={Formulário acessível usando abordagens citadas acima}, label=code8:good]
+<form>
+    <output id="formMessage" role="alert" aria-live="assertive" tabindex="0" class="error">
+        O formulário apresenta erros que impedem a finalização do seu cadastro. Confira se todos os campos obrigatórios foram preenchidos e tente novamente.
+    </output>
+
+    <p>
+        <label for="email1">
+            E-mail <span class="required">(obrigatório)</span>:
+        </label>
+        <input type="email1" name="email1" id="email1" required="" aria-invalid="true" aria-describedby="emailMessage">
+        <span class="fieldMessage" id="emailMessage">
+            O e-mail não pode ficar em branco e deve ser válido.
+        </span>
+      </p>
+
+      <p>
+        <label for="phone1">
+            Telefone <span class="optional">(opcional)</span>:
+        </label>
+        <input type="tel" name="phone1" id="phone1" aria-describedby="phoneTip">
+        <span class="fieldTip" id="phoneTip">
+            Formato: (99) 99999-9999.
+        </span>
+      </p>
+
+    <button class="formButton" id="formButtonARIA" type="submit">Finalizar cadastro</button>
+</form>
+\end{lstlisting}}
+
+\begin{figure}[ht]
+  	\center
+    \includegraphics[width=0.7\textwidth]{images/form-acessivel.png}
+    \caption{A imagem exemplifica o código \ref{code8:good} após a compilação.}
+    \label{fig5:code8}
+\end{figure} 
 }
 \subsubsection{Adaptação de componentes para o uso de leitores de telas e navegação por teclado}
 {Antes de falar de adaptação de componentes é necessário entender como funciona o leitor de telas. O leitor de telas basicamente é um software que vai percorrendo textos e imagens e lendo em voz alta tudo o que ele encontra na tela, a partir do momento que o usuário começa a interagir com o software para efetuar uma navegação ele vai percorrendo o documento saltando entre elementos interativos e cabeçalhos. Para que essa navegação ocorra tudo deve está funcionando direito, pois caso contrário o usuário pode se perder na página e ter dificuldades em entender como a informação está organizada. No leitor de telas a navegação ocorre de três maneiras: 
@@ -327,8 +333,6 @@ div {
     \item Navegação com a tecla h: O leitor salta entre os cabeçalhos marcados na página.
 \end{itemize}
 
-
-
 {
 \vspace{1.5cm}
 {\centerline{\textbf{Caso de uso 1:} Navegação por cabeçalho.}}.
@@ -336,73 +340,155 @@ div {
 Cabeçalhos compõem a hierarquia de informação do site, essa hierarquia é usada pelos leitores de tela para navegação dentro da página. A grande maioria dos leitores de tela dispõem de atalhos para acesso rápido aos cabeçalhos marcados na página. Para garantir que tecnologias assistivas acessem o conteúdo dos cabeçalho sem sua ordem de importância é preciso tomar alguns cuidados: 
 \begin{itemize}
     \item Cuidado com múltiplas \textit{tags} \lstinline{h1} na página. Mesmo que haja separação de contexto para a utilização de mais de um \lstinline{h1} por página o leitor de tela não consegue identificar a diferença e a importância de \lstinline{h1} contidos em outras \textit{tags}.
-    \item Para essa navegação funcionar, o código precisa ter sido escrito com a semântica correta, ou seja, cabeçalhos devem ser definidos como cabeçalhos e não usar qualquer outro artificio visual para se assemelhar a um cabeçalho. 
+    \item Para essa navegação funcionar, o código precisa ter sido escrito com a semântica correta, ou seja, cabeçalhos devem ser definidos como cabeçalhos e não usar qualquer outro artificio visual para se assemelhar a um cabeçalho, como exemplificado no código \ref{code9:good}. 
 \end{itemize}
-{\begin{lstlisting}[language=html,caption=cabeçalhos com hierarquia]
+{\begin{lstlisting}[language=html,caption={cabeçalhos com hierarquia}, label=code9:good]
 <h1>Cabeçalho Principal</h1>
 <p>Exemplo de um texto de um parágrafo</p>
 <h2>Cabeçalho Secundário</h2>
 <p>Mais texto de um parágrafo.</p>
 \end{lstlisting}}
 
+
+
 \vspace{1.5cm}
 {\centerline{\textbf{Caso de uso 2:}  Navegação por tabulação e leitores de tela}}
-{
-{
+
 A ordem da navegação por tabulação é derivada da forma como o \textit{layout} do \textit{site} está escrito, contudo a ordem padrão pode não corresponder necessariamente a ordem visual. Ao utilizar a tecla \textit{tab}, o leitor de tela realiza o foco e lê em voz alta os \textit{links} e componentes interativos presentes na página.  A tabulação é utilizada somente para navegar entre os \textit{links}, e com isso todos os \textit{links} terão que ser localizados através destas duas formas, com a tabulação ou com as setas. O que diferencia uma forma da outra, é que com as setas, o usuário poderá ler toda a página (incluindo texto entre os \textit{links}), e com a tabulação, o usuário só pode localizar os \textit{links}, botões, campos de edição, e caixas de seleção.
 
+Navegar por entre os \textit{links} é uma forma de observar o texto rapidamente, especialmente se os usuários estiverem tentando encontrar uma seção específica do \textit{website}. Para ter uma navegação por tabulação eficiente é preciso passar por alguns pontos: 
+
+\begin{enumerate}
+    \item Ordene de forma lógica e intuitiva a leitura e tabulação. Preparar o \textit{HTML} \cite{HTML} para ter uma navegação consistente e eficaz é essencial para o bom funcionamento da navegação atrelada a leitores de tela. 
+    \item Usar a tecla \textit{tab} para passar pelos \textit{links} e controles de formulários
+    das páginas, certificando-se de que todos os links e controles de formulários podem ser acessados, bem como se os links indicam claramente para onde levam. 
+    
+    \item Com atributo \lstinline{tabindex} é possível definir uma ordem de foco nos elementos dispostos na tela. Usando o \lstinline{tabindex=0} é inserido um elemento na ordem natural de tabulação, como visto no exemplo do código \ref{code10}, e com \lstinline{tabindex="-1"} um elemento é removido da ordem e tabulação.
+    {\begin{lstlisting}[language=html,caption={Uso do atributo \textit{tabindex} para adicionar um elemento a ordem de foco}, label=code10]
+        <label>
+            Primeiro na lista de tabulação:<input type="text">
+        </label>
+        <div tabindex="0">
+        Próximo item na lista de tabulação, mesmo não sendo um elemento que receberia o foco natural
+        </div>
+        <div>Não será focado pois está sem o tabindex</div>
+    \end{lstlisting}}
+    
+    \item Adicione o atributo \lstinline{title} aos \textit{links}, ele mostrará uma descrição do lugar pra onde o \textit{link} leva, melhorando a navegação. Ao ter o elemento focado o leitor conseguirá ler o atributo \lstinline{title} e saber a direção que o redirecionamento poderá tomar ou se um elemento novo surgirá, como exemplificado no código \ref{code11}.
+    {\begin{lstlisting}[language=html,caption={Uso do atributo \textit{title} para dar uma explicação sobre onde o link leva}, label=code11]
+    <a href="#" onclick="abrePopup()" onkeypress="abrePopup()" title="Abre uma janela pop-up com Javascript">Ver mais informações</a>
+    \end{lstlisting}}
+    
+    \item No exemplo exposto no código \ref{code11} é usada a abordagem de \textit{landmarks}, que consiste no  fornecimento de âncoras para ir direto a um bloco de conteúdo. São comumente chamados de \textit{landmarks} é um tipo de região em uma página \textit{web} a qual uma pessoa pode querer acessá-la rapidamente. Um dos principais benefícios em se usar pontos de referência é a possibilidade de o usuário acessar diretamente uma região da página sem a necessidade de seguir a ordem natural do conteúdo. Isso é especialmente relevante para o caso de pessoas que utilizam leitores de tela para navegar na \textit{web}. Para essa abordagem é muito utilizado o CSS \cite{CSS} deixando-os \textit{links} invisíveis e apenas disponíveis quando a navegação por tabulação se iniciar.
+    
+    {\begin{lstlisting}[language=html,caption={Criação de \textit{landmarks} para acessar pontos de referências através do atalho p.}, label=code12]
+    <div role="heading" id="cabecalho"> 
+      <h1>O Cabeçalho</h1> 
+      <a href="#conteudo" accesskey="p">Pular para o conteúdo principals</a> 
+    </div> 
+    <div role="navigation" id="navegacao"> conteúdo da navegação </div>
+    <div role="main" id="conteudo"> conteúdo da main </mdiv>
+    \end{lstlisting}}
+    
+    \item É aconselhável não tabelas para diagramação. As tabelas devem ser utilizadas apenas para dados tabulares e não para efeitos de disposição dos elementos na página. O leitor de telas sairá pulando por cada campo das tabelas e o usuário poderá ficar perdido na navegação. Para efeitos de diagramação a melhor opção está na utilização do \textit{CSS} \cite{CSS}.
+    
+    \item Utilização de separação dos \textit{links} adjacentes. Em uma sequência de \textit{links}, além do espaço, é importante o uso de separadores ou elementos do HTML \cite{HTML} adequados para que as pessoas com deficiência identifiquem claramente onde termina e começa um novo \textit{link}. É recomendado o uso de listas, assim como no exemplo do código \ref{code13} , em que cada elemento dentro da lista é um link.
+    {\begin{lstlisting}[language=html,caption={Separação de \textit{links} adjacentes usando a \textit{tag} li.}, label=code13]
+    <ul id="menu">
+        <li> <a href="home.html">Home</a></li>
+        <li> <a href="pesquisa.html">Pesquisa</a></li>
+    </ul>
+    \end{lstlisting}}
+    
+    \item É desencorajado a abertura novas instâncias sem a solicitação do usuário. O impedimento de  redirecionamento automático de páginas é algo necessário. Forçar a abertura de \textit{links} em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso implemente essa funcionalidade, o \textit{link} deve possuir uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no \textit{CSS} \cite{css}. No \textit{CSS} \cite{CSS} o conteúdo de pseudo-elementos é lido em voz \textit{alt} a por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
+    
+    \item O conteúdo deve possuir o foco por mouse ou teclado e esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. Como no exemplo do código \ref{code14} pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML \cite{HTML} que receber o foco do teclado, como \textit{links} e elementos de formulário.
+    {\begin{lstlisting}[language=html,caption={Exemplo de como estilizar o o elemento nos estados de foco e hover.}, label=code14]
+    a:focus, a:hover {
+        border: 2px solid #F00;
+    }
+    \end{lstlisting}}
+    
+    \item Todas as funcionalidades que estão disponíveis via mouse deverão estar disponíveis para serem acionadas via teclado. Só dessa forma o site estará totalmente acessível para pessoas com deficiências visuais.
+    
+\end{enumerate}
+
+}}
+
+{
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 1:} Navegação por cabeçalho.}}.
+Cabeçalhos compõem a hierarquia de informação do site, essa hierarquia é usada pelos leitores de tela para navegação dentro da página. A grande maioria dos leitores de tela dispõem de atalhos para acesso rápido aos cabeçalhos marcados na página. Para garantir que tecnologias assistivas acessem o conteúdo dos cabeçalho sem sua ordem de importância é preciso tomar alguns cuidados: 
+\begin{itemize}
+    \item Cuidado com múltiplas \textit{tags} \lstinline{h1} na página. Mesmo que haja separação de contexto para a utilização de mais de um \lstinline{h1} por página o leitor de tela não consegue identificar a diferença e a importância de \lstinline{h1} contidos em outras \textit{tags}.
+    \item Para essa navegação funcionar, o código precisa ter sido escrito com a semântica correta, ou seja, cabeçalhos devem ser definidos como cabeçalhos e não usar qualquer outro artificio visual para se assemelhar a um cabeçalho, como exemplificado no código \ref{code9:good}. 
+\end{itemize}
+{\begin{lstlisting}[language=html,caption={cabeçalhos com hierarquia}, label=code9:good]
+<h1>Cabeçalho Principal</h1>
+<p>Exemplo de um texto de um parágrafo</p>
+<h2>Cabeçalho Secundário</h2>
+<p>Mais texto de um parágrafo.</p>
+\end{lstlisting}}
+}
+{
+\vspace{1.5cm}
+{\centerline{\textbf{Caso de uso 2:}  Navegação por tabulação e leitores de tela}}
+
+A ordem da navegação por tabulação é derivada da forma como o \textit{layout} do \textit{site} está escrito, contudo a ordem padrão pode não corresponder necessariamente a ordem visual. Ao utilizar a tecla \textit{tab}, o leitor de tela realiza o foco e lê em voz alta os \textit{links} e componentes interativos presentes na página.  A tabulação é utilizada somente para navegar entre os \textit{links}, e com isso todos os \textit{links} terão que ser localizados através destas duas formas, com a tabulação ou com as setas. O que diferencia uma forma da outra, é que com as setas, o usuário poderá ler toda a página (incluindo texto entre os \textit{links}), e com a tabulação, o usuário só pode localizar os \textit{links}, botões, campos de edição, e caixas de seleção.
 
 Navegar por entre os \textit{links} é uma forma de observar o texto rapidamente, especialmente se os usuários estiverem tentando encontrar uma seção específica do \textit{website}. Para ter uma navegação por tabulação eficiente é preciso passar por alguns pontos: 
 \begin{enumerate}
     \item Ordene de forma lógica e intuitiva a leitura e tabulação. Preparar o \textit{HTML}\cite{HTML} para ter uma navegação consistente e eficaz é essencial para o bom funcionamento da navegação atrelada a leitores de tela. 
-    \item Usar a tecla \textit{tab} para passar pelos links e controles de formulários
+    \item Usar a tecla \textit{tab} para passar pelos \textit{links} e controles de formulários
     das páginas, certificando-se de que todos os links e controles de formulários podem ser acessados, bem como se os links indicam claramente para onde levam. 
+    
     \begin{itemize}
-        \item Com atributo \lstinline{tabindex} é possível definir uma ordem de foco nos elementos dispostos na tela. Usando o \lstinline{tabindex=0} é inserido um elemento na ordem natural de tabulação e com \lstinline{tabindex="-1"} um elemento é removido da ordem e tabulação.
+        \item Com atributo \lstinline{tabindex} é possível definir uma ordem de foco nos elementos dispostos na tela. Usando o \lstinline{tabindex=0} é inserido um elemento na ordem natural de tabulação, como visto no exemplo do código \ref{code10}, e com \lstinline{tabindex="-1"} um elemento é removido da ordem e tabulação.
 
-{\begin{lstlisting}[language=html,caption=Uso do atributo tabindex]
-<label>
-    Primeiro na lista de tabulação:<input type="text">
-</label>
-<div tabindex="0">
-Próximo item na lista de tabulação, mesmo não sendo um elemento que receberia o foco natural
-</div>
-<div>Não será focado pois está sem o tabindex</div>
-\end{lstlisting}}
-        \item Adicione o atributo \lstinline{title} aos \textit{links}, ele mostrará uma descrição do lugar pra onde o \textit{link} leva, melhorando a navegação.
-{\begin{lstlisting}[language=html,caption=usando o atributo title]
-<a href="#" onclick="abrePopup()" onkeypress="abrePopup()" title="Abre uma janela pop-up com Javascript">Ver mais informações</a>
-\end{lstlisting}}
+        {\begin{lstlisting}[language=html,caption={Uso do atributo \textit{tabindex} para adicionar um elemento a ordem de foco}, label=code10]
+        <label>
+            Primeiro na lista de tabulação:<input type="text">
+        </label>
+        <div tabindex="0">
+        Próximo item na lista de tabulação, mesmo não sendo um elemento que receberia o foco natural
+        </div>
+        <div>Não será focado pois está sem o tabindex</div>
+        \end{lstlisting}}
+        \item Adicione o atributo \lstinline{title} aos \textit{links}, ele mostrará uma descrição do lugar pra onde o \textit{link} leva, melhorando a navegação. Ao ter o elemento focado o leitor conseguirá ler o atributo \lstinline{title} e saber a direção que o redirecionamento poderá tomar ou se um elemento novo surgirá, como exemplificado no código \ref{code11}.
+        {\begin{lstlisting}[language=html,caption={Uso do atributo \textit{title} para dar uma explicação sobre onde o link leva}, label=code11]
+        <a href="#" onclick="abrePopup()" onkeypress="abrePopup()" title="Abre uma janela pop-up com Javascript">Ver mais informações</a>
+        \end{lstlisting}}
     \end{itemize}
-    \item Forneça âncoras para ir direto a um bloco de conteúdo. São comumente chamados de \textit{landmarks} é um tipo de região em uma página \textit{web} a qual uma pessoa pode querer acessá-la rapidamente. Um dos principais benefícios em se usar pontos de referência é a possibilidade de o usuário acessar diretamente uma região da página sem a necessidade de seguir a ordem natural do conteúdo. Isso é especialmente relevante para o caso de pessoas que utilizam leitores de tela para navegar na \textit{web}. Para essa abordagem é muito utilizado o CSS \cite{CSS} deixando-os \textit{links} invisíveis e apenas disponíveis quando a navegação por tabulação se iniciar. 
-{\begin{lstlisting}[language=html,caption=usando landmarks]
-<div role="heading" id="cabecalho"> 
-  <h1>O Cabeçalho</h1> 
-  <a href="#conteudo" accesskey="p">Pular para o conteúdo principals</a> 
-</div> 
-<div role="navigation" id="navegacao"> conteúdo da navegação </div>
-<div role="main" id="conteudo"> conteúdo da main </mdiv>
-\end{lstlisting}}
+    \item No exemplo exposto no código \ref{code11} é usada a abordagem de \textit{landmarks}, que consiste no  fornecimento de âncoras para ir direto a um bloco de conteúdo. São comumente chamados de \textit{landmarks} é um tipo de região em uma página \textit{web} a qual uma pessoa pode querer acessá-la rapidamente. Um dos principais benefícios em se usar pontos de referência é a possibilidade de o usuário acessar diretamente uma região da página sem a necessidade de seguir a ordem natural do conteúdo. Isso é especialmente relevante para o caso de pessoas que utilizam leitores de tela para navegar na \textit{web}. Para essa abordagem é muito utilizado o CSS \cite{CSS} deixando-os \textit{links} invisíveis e apenas disponíveis quando a navegação por tabulação se iniciar. 
+        {\begin{lstlisting}[language=html,caption={Criação de \textit{landmarks} para acessar pontos de referências através do atalho p}, label=code12]
+        <div role="heading" id="cabecalho"> 
+          <h1>O Cabeçalho</h1> 
+          <a href="#conteudo" accesskey="p">Pular para o conteúdo principals</a> 
+        </div> 
+        <div role="navigation" id="navegacao"> conteúdo da navegação </div>
+        <div role="main" id="conteudo"> conteúdo da main </mdiv>
+        \end{lstlisting}}
     \item É aconselhável não tabelas para diagramação. As tabelas devem ser utilizadas apenas para dados tabulares e não para efeitos de disposição dos elementos na página. O leitor de telas sairá pulando por cada campo das tabelas e o usuário poderá ficar perdido na navegação. Para efeitos de diagramação a melhor opção está na utilização do \textit{CSS} \cite{CSS}.
-    \item Utilização de separação dos \textit{links} adjacentes. Em uma sequência de \textit{links}, além do espaço, é importante o uso de separadores ou elementos do HTML \cite{HTML} adequados para que as pessoas com deficiência identifiquem claramente onde termina e começa um novo \textit{link}. É recomendado o uso de listas , em que cada elemento dentro da lista é um link.
-{\begin{lstlisting}[language=html,caption=separando \textit{links} adjacentes]
-<ul id="menu">
-    <li> <a href="home.html">Home</a></li>
-    <li> <a href="pesquisa.html">Pesquisa</a></li>
-</ul>
-\end{lstlisting}}
-    \item É desencorajado a abertura novas instâncias sem a solicitação do usuário. O impedimento de  redirecionamento automático de páginas é algo necessário. Forçar a abertura de \textit{links} em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso haja implementação dessa funcionalidade, a utilização de \textit{link} é atrelada a ter uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no CSS \cite{CSS}. No CSS \cite{CSS} o conteúdo de pseudo-elementos é lido em voz alta por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
-    \item O conteúdo deve possuir o foco por mouse ou teclado e esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. A pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML \cite{HTML} que receber o foco do teclado, como \textit{links} e elementos de formulário.
-{\begin{lstlisting}[language=html,caption=usando o foco visível]
-a:focus, a:hover {
-    border: 2px solid #F00;
-}
-\end{lstlisting}}
-    \item Todas as funcionalidades que estão disponíveis via mouse deverão estar disponíveis para serem acionadas via teclado. Só dessa forma o site estará totalmente acessível para pessoas com deficiências visuais. 
+    \item Utilização de separação dos \textit{links} adjacentes. Em uma sequência de \textit{links}, além do espaço, é importante o uso de separadores ou elementos do HTML \cite{HTML} adequados para que as pessoas com deficiência identifiquem claramente onde termina e começa um novo \textit{link}. É recomendado o uso de listas, assim como no exemplo do código \ref{code13} , em que cada elemento dentro da lista é um link.
+    {\begin{lstlisting}[language=html,caption={Separação de \textit{links} adjacentes usando a \textit{tag} li.}, label=code13]
+    <ul id="menu">
+        <li> <a href="home.html">Home</a></li>
+        <li> <a href="pesquisa.html">Pesquisa</a></li>
+    </ul>
+    \end{lstlisting}}
+    \item É desencorajado a abertura novas instâncias sem a solicitação do usuário. O impedimento de  redirecionamento automático de páginas é algo necessário. Forçar a abertura de \textit{links} em uma nova janela não é algo esperado e o usuário se perderá na navegação. Caso implemente essa funcionalidade, o \textit{link} deve possuir uma iconografia óbvia e explicativa, usando pseudo-elemento \lstinline{::after} no \textit{CSS} \cite{CSS}. No \textit{CSS} \cite{CSS} o conteúdo de pseudo-elementos é lido em voz alta por leitores de tela, portanto é de extrema importância de que o conteúdo seja com informações relevantes.
+
+    \item O conteúdo deve possuir o foco por mouse ou teclado e esse foco deve ser visível. Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. Como no exemplo do código \ref{code14} pseudo-classe \lstinline{:focus} é utilizada para definir o estilo de qualquer elemento HTML \cite{HTML} que receber o foco do teclado, como \textit{links} e elementos de formulário.
+    {\begin{lstlisting}[language=html,caption={Exemplo de como estilizar o o elemento nos estados de foco e hover.}, label=code14]
+    a:focus, a:hover {
+        border: 2px solid #F00;
+    }
+    \end{lstlisting}}
+    \item Todas as funcionalidades que estão disponíveis via mouse deverão estar disponíveis para serem acionadas via teclado. Só dessa forma o site estará totalmente acessível para pessoas com deficiências visuais.
 \end{enumerate}
 }
-}
-}
+
+
 
 
 \subsection{Fase 3: Construção do dashboard acessível}
@@ -479,7 +565,7 @@ Dados fornecidos apenas por gráficos &
 
 \end{tabular}%
 }
-\captionof{table}{Barreiras e decisões na construção de um gráfico acessível}
+\captionof{table}{Tabela exemplificando barreiras e decisões na construção de um gráfico acessível}
 \label{Barreiras e decisões na construção de um gráfico acessível}
 
 \end{minipage}
@@ -497,7 +583,7 @@ Para facilitar a construção como módulos separados cada tipo de gráfico se t
 
 
 }
-}
+
 
 
 \subsection{Fase 4: Testes e avaliações de acessibilidade}
@@ -515,7 +601,7 @@ padrões \textit{web} e as diretrizes de acessibilidade, é necessário efetuar 
 }
 
 \subsection{Tecnologias utilizadas} 
-{A linguagem de programação JavaScript foi escolhida para a elaboração deste trabalho devido a sua grande relevância no frontend. Entre as principais bibliotecas utilizadas neste projeto destaca-se:
+{A linguagem de programação JavaScript foi escolhida para a elaboração deste trabalho devido a sua grande relevância no \textit{front-end}. Entre as principais bibliotecas utilizadas neste projeto destaca-se:
 \begin{itemize}
 \item \textit{HTML \href{https://developer.mozilla.org/pt-BR/docs/Web/HTML}{HTML}: é uma linguagem de marcação utilizada na construção de páginas na \textit{Web}}.
 \item Diretrizes \textit{\href{https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/}{WCAG}: é um conjunto de regras que definem a forma de como tornar o conteúdo da \textit{Web} mais acessível para pessoas com deficiência}.
