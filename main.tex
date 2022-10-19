@@ -52,6 +52,7 @@
 \usepackage{graphicx}
 \usepackage{colortbl}
 \usepackage{longtable}
+\usepackage{trivfloat}
 
 \ifblackandwhite
   \newcommand{\cheading}[2]{\textbf{#1\hfill #2}}
@@ -107,8 +108,10 @@
 \newpage
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 \pagestyle {plain}
-\setcounter{page}{0} \pagenumbering{arabic}
+\setcounter{page}{5}
+
 
 \input{sections/01-introducao.tex}
 \input{sections/02-atuacao.tex}
