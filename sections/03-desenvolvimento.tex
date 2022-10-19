@@ -9,12 +9,33 @@
 
 Para tratar essa problemática foi necessário dividi-la em pequenas fases e trabalhar isoladamente em cada uma delas, visto que essas fases dependiam uma da outra e elas foram desenvolvidas de forma cronológica partindo de pesquisas a testes. 
 
-No total foram preciso quatro fases, sendo a primeira fase voltada para o entendimento do problema e do uso das novas tecnologias como também entender as limitações do projeto. A segunda fase estava voltada na construção e adaptação da interface do usuário seguindo tudo o que foi levantado na fase de entendimento do problema. A terceira fase teve foco na construção do painel administrativo e no \textit{dashboard}, além do planejamento de componentes e na construção de gráficos acessíveis. Por fim a quarta fase, onde se concentrou os testes, foram construídas abordagens de testes para a certificação de que todos os requisitos estavam sendo satisfeitos e se as diretrizes estavam sendo seguidas.
+\begin{figure}[ht]
+  	\centering
+    \includegraphics[width=0.8\textwidth]{images/guideline-4.png}
+    \caption{Fases do Guideline}
+    \caption*{Fonte: a autora (2022)}
+    \label{fig:guideline}
+\end{figure}  
+
+No total foram preciso quatro fases, como exemplificado na figura  \ref{fig:guideline}, sendo a primeira fase voltada para o entendimento do problema e do uso das novas tecnologias como também entender as limitações do projeto. A segunda fase estava voltada na construção e adaptação da interface do usuário seguindo tudo o que foi levantado na fase de entendimento do problema. A terceira fase teve foco na construção do painel administrativo e no \textit{dashboard}, além do planejamento de componentes e na construção de gráficos acessíveis. Por fim a quarta fase, onde se concentrou os testes, foram construídas abordagens de testes para a certificação de que todos os requisitos estavam sendo satisfeitos e se as diretrizes estavam sendo seguidas.
 
 }
 
 \subsection{Fase 1: Pesquisa e entendimento}
-{Para começar a construção do \textit{e-commerce} se fazia necessário entender melhor o problema que iria ser enfrentado e as tecnologias usadas a fim de entender as limitações do projeto em questão de performance. Com o entendimento das limitações do projeto os desenvolvedores teriam a visão da possibilidade ou não de adicionar novas bibliotecas ao decorrer do desenvolvimento caso fosse necessário. 
+{
+Para começar a construção do \textit{e-commerce} se fazia necessário entender melhor o problema que iria ser enfrentado e as tecnologias usadas a fim de entender as limitações do projeto em questão de performance. Com o entendimento das limitações do projeto os desenvolvedores teriam a visão da possibilidade ou não de adicionar novas bibliotecas ao decorrer do desenvolvimento caso fosse necessário. Na figura \ref{fig:guideline-f1} é destrinchado o que compreende a fase 1 na construção do \textit{guideline}.
+
+\newpage
+
+
+\begin{figure}[ht]
+  	\centering
+    \includegraphics[width=0.75\textwidth]{images/guideline-f1.png}
+    \caption{Fase 1 do Guideline}
+    \caption*{Fonte: a autora (2022)}
+    \label{fig:guideline-f1}
+\end{figure} 
+
 
 Após concluída a fase de estudo e exploração surgiu a necessidade da construção de um guia de acessibilidade que seria usado na fase de desenvolvimento do projeto, essa decisão se deu porque a documentação das diretrizes de acessibilidade se mostrou bastante extensa e englobava muitos tipos de deficiência, tornando o entendimento muito dificultoso para todos que estão lendo. Para complementar o guia de acessibilidade foi construído um \textit{style guide} para guiar todos os desenvolvedores a respeito de aspectos importantes que devem estar presentes na \textit{User Interface (UI)}}
 
@@ -190,12 +211,20 @@ No quadro abaixo \ref{elementos de UI} foi referenciado os identificadores de 1 
 
 
 \subsection{Fase 2: Adaptação e construção da \textit{interface} do usuário acessível e usável com base no guia de acessibilidade e \textit{style guide}}
-{A segunda fase se concentrou na adaptação da \textit{interface} do usuário e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias. Nessa fase o foco principal se dividiu em duas vertentes:
+{A segunda fase se concentrou na adaptação da \textit{interface} do usuário e na construção de novos componentes para o \textit{e-commerce}, sempre seguindo os guias, como exemplificado na figura \ref{guideline-f3}. Nessa fase o foco principal se dividiu em duas vertentes:
 \begin{itemize}
-\item Criar abordagens inteligentes para problemas de acessibilidade em imagens, formulários e navegação e a adaptação de componentes com \textit{HyperText Markup Language} (HTML) \cite{flatschart2011html}  não semântico para semântico.
+\item Criar abordagens inteligentes baseadas em casos de uso para problemas de acessibilidade em imagens, formulários e navegação e a adaptação de componentes com \textit{HyperText Markup Language} (HTML) \cite{flatschart2011html}  não semântico para semântico.
 \item  Adaptar e criar componentes para que as tecnologias assistivas pudessem entendê-los corretamente e assim ter uma a navegação por teclado eficaz.
 
 \end{itemize}
+
+\begin{figure}[ht]
+    \centering
+	\includegraphics[width=0.8\textwidth]{images/guideline-f2.png}
+    \caption{Fase 2 do guideline}
+    \caption*{Fonte: a autora (2022)}
+    \label{guideline-f3}
+\end{figure} 
 }
 \subsubsection{Abordagens inteligentes e adaptação de componentes}
 {
@@ -416,11 +445,24 @@ Navegar por entre os \textit{links} é uma forma de observar o texto rapidamente
 
 
 \subsection{Fase 3: Construção do dashboard acessível}
-{Para a construção do \textit{dashboad} com gráficos foi utilizada a biblioteca D3.js \cite{D3} que é usada para visualização de informação. Essa biblioteca permite que sejam construídas aplicações em que os dados entram puros e são dinamicamente associados em representações gráficas como exemplificado em \ref{graph:d3}. Com o D3 o \textit{Document Object Model} (DOM) \cite{DOM} pode ser facilmente manipulado já que ele faz uso dos padrões da \textit{web} como \textit{HTML} \textit{CSS} e \textit{Scalable Vector Graphics} (SVG) para renderizar gráficos de visualização poderosos.
+{
+
+Para a fase de construção do dashboard acessível o foco se manteve na construção dos gráficos de forma acessível, navegável e reutilizável como exemplificado na figura \ref{guideline-f3}.
 \newpage
+
 \begin{figure}[ht]
   	\center
-    \includegraphics[width=0.7\textwidth]{images/exemplo-graf-d3.png}
+    \includegraphics[width=0.7\textwidth]{images/guideline-f3.png}
+    \caption{Fase 3 do guideline}
+    \caption*{Fonte: a autora 2022}
+    \label{guideline-f3}
+\end{figure} 
+
+Para a construção dos gráficos do \textit{dashboad} foi utilizada a biblioteca D3.js \cite{D3} que é usada para visualização de informação. Essa biblioteca permite que sejam construídas aplicações em que os dados entram puros e são dinamicamente associados em representações gráficas como exemplificado em \ref{graph:d3}. Com o D3 o \textit{Document Object Model} (DOM) \cite{DOM} pode ser facilmente manipulado já que ele faz uso dos padrões da \textit{web} como \textit{HTML}, \textit{CSS} e \textit{Scalable Vector Graphics} (SVG) para renderizar gráficos de visualização poderosos.
+
+\begin{figure}[ht]
+  	\center
+    \includegraphics[width=0.6\textwidth]{images/exemplo-graf-d3.png}
     \caption{Um gráfico desenvolvido com D3.js}
     \caption*{Fonte: a autora 2022}
     \label{graph:d3}
@@ -430,6 +472,9 @@ Navegar por entre os \textit{links} é uma forma de observar o texto rapidamente
 
 % \vspace{1cm}
 {\textbf{Construção de gráficos com D3.js}}
+
+
+
 No \textit{e-commerce} foi decidido não construir o gráfico inteiramente com D3.js, pois a abordagem normal presente não facilitaria o reaproveitamento para a criação dos componentes. Quando um gráfico é plotado somente com D3.js  pode haver problemas de performance, visto que o React \cite{REACT} não estava preparado para esse tipo de renderização contínua criada ao se aplicar filtros e interações nos gráficos. Dessa forma, a abordagem mais coerente era usar as \textit{tags} \textit{HTML} normais e quando era necessário feito a criação do elementos e interações usando o D3.js.
 
 Para a manipulação do DOM, é necessário aprender a utilizar os recursos presente no D3. A biblioteca usa JavaScript para realizar a maioria das tarefas de seleção, transição e vinculação de dados.
@@ -463,7 +508,7 @@ O gráfico exemplificado abaixo \ref{fig:grafico-d3} foi construído levando em 
 {
 
 {Tomando como exemplo a figura \ref{fig:grafico-d3}, a tabela \ref{Barreiras e decisões na construção de um gráfico acessível} logo abaixo exemplifica cada barreira de acessibilidade e sua respectiva tomada de decisão.}
-\vspace*{20px}
+
 
 \noindent\begin{minipage}{\linewidth}
 \centering
@@ -496,6 +541,8 @@ Dados fornecidos apenas por gráficos &
 
 }
 
+\vspace*{20px}
+
 {\textbf{Gráficos como componentes reutilizáveis}}
 
 
@@ -511,7 +558,19 @@ Para facilitar a construção como módulos separados cada tipo de gráfico se t
 
 \subsection{Fase 4: Testes e avaliações de acessibilidade}
 {Durante e após a construção do \textit{e-commerce} de acordo com os
-padrões \textit{web} e as diretrizes de acessibilidade, é necessário efetuar testes para garantir sua acessibilidade. Todos os testes descritos nessa seção foram executados por pessoas que não são os \textit{stakeholders} do projeto mas fazem parte da equipe de \textit{quality assurance}. Com o objetivo de cobrir o máximo de casos de testes possível esses testes foram abordados e executados de dois modos: 
+padrões \textit{web} e as diretrizes de acessibilidade, é necessário efetuar testes para garantir sua acessibilidade. Todos os testes descritos nessa seção foram executados por pessoas que não são os \textit{stakeholders} do projeto mas fazem parte da equipe de \textit{quality assurance}. 
+
+Com o objetivo de cobrir o máximo de casos de testes possível as avaliações abordaram dois modos de testes: a avaliação automático e a manual, como exemplificado na figura \ref{guideline-f4}.
+
+\begin{figure}[ht]
+  	\center
+    \includegraphics[width=0.8\textwidth]{images/guideline-f4.png}
+    \caption{Fase 4 do guideline}
+    \caption*{Fonte: a autora 2022}
+    \label{guideline-f4}
+\end{figure} 
+
+
 \begin{itemize}
 \item Avaliação automática: São as avaliações feitas de maneira automática por meio de \textit{plugins} de verificação e de \textit{websites} de validação. Quando os testes automáticos não atingiam os requisitos de aceitação era gerado um relatório contendo os pontos de falhas dentro do teste, esse relatório era repassado para a equipe de desenvolvimento para que as devidas correções fossem feitas.
 \begin{itemize}
@@ -528,12 +587,12 @@ padrões \textit{web} e as diretrizes de acessibilidade, é necessário efetuar 
 \subsection{Tecnologias utilizadas} 
 {A linguagem de programação JavaScript foi escolhida para a elaboração deste trabalho devido a sua grande relevância no \textit{front-end}. Entre as principais bibliotecas utilizadas neste projeto destaca-se:
 \begin{itemize}
-\item \textit{\href{https://developer.mozilla.org/pt-BR/docs/Web/HTML}{HTML}: é uma linguagem de marcação utilizada na construção de páginas na \textit{Web}}.
-\item Diretrizes \textit{\href{https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/}{WCAG}: é um conjunto de regras que definem a forma de como tornar o conteúdo da \textit{Web} mais acessível para pessoas com deficiência}.
-\item \textit{Atributos \href{https://www.w3.org/TR/wai-aria-1.2/}{WAI-ARIA}: Especificações técnicas que oferecem maneiras de tornar as aplicações mais acessíveis a uma diversidade maior de pessoas, incluindo quem utiliza tecnologias assistivas, como leitores de telas}.
-\item { \href{https://pt-br.reactjs.org/}{React.js}: É uma biblioteca \textit{JavaScript} para criar interfaces de usuário, ela é declarativa e baseada em componentes}.
-\item {\href{https://sass-lang.com/}{Sass}: Ou \textit{Syntactically Awesome Style Sheets} é uma linguagem de extensão do \textit{CSS} e tem como objetivo tornar o processo de desenvolvimento mais simples e eficiente}.
-\item {\href{https://d3js.org/}{D3.js} : Trata-se de uma biblioteca {JavaScript} para construção de visualizações de dados. \textit{D3} permite que visualizações sejam criadas diretamente em páginas \textit{HTML} através de gráficos vetorizados \lstinline{SVG}}.
+\item \textit{\href{https://developer.mozilla.org/pt-BR/docs/Web/HTML}{HTML}}: é uma linguagem de marcação utilizada na construção de páginas na \textit{Web}.
+\item Diretrizes \textit{\href{https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/}{WCAG}}: é um conjunto de regras que definem a forma de como tornar o conteúdo da \textit{Web} mais acessível para pessoas com deficiência.
+\item \textit{Atributos \href{https://www.w3.org/TR/wai-aria-1.2/}{WAI-ARIA}}: Especificações técnicas que oferecem maneiras de tornar as aplicações mais acessíveis a uma diversidade maior de pessoas, incluindo quem utiliza tecnologias assistivas, como leitores de telas.
+\item { \href{https://pt-br.reactjs.org/}{React.js}}: É uma biblioteca \textit{JavaScript} para criar interfaces de usuário, ela é declarativa e baseada em componentes.
+\item {\href{https://sass-lang.com/}{Sass}}: Ou \textit{Syntactically Awesome Style Sheets} é uma linguagem de extensão do \textit{CSS} e tem como objetivo tornar o processo de desenvolvimento mais simples e eficiente.
+\item {\href{https://d3js.org/}{D3.js}}: Trata-se de uma biblioteca {JavaScript} para construção de visualizações de dados. O \textit{D3} permite que visualizações sejam criadas diretamente em páginas \textit{HTML} através de gráficos vetorizados \lstinline{SVG}.
 \item Tecnologias assistivas: Para a construção do \textit{e-commerce} foram usados alguns tipos de leitores de telas que transcrevem para linguagem falada o conteúdo textual presente na tela do dispositivo eletrônico. 
 \begin{itemize}
 \item \href{https://www.apple.com/br/accessibility/vision/}{VoiceOver}: Leitor de tela presente nos produtos e ambientes virtuais confeccionados pela \textit{Apple}. 
